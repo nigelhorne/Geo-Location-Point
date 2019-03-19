@@ -96,6 +96,53 @@ sub distance {
 	return $self->{'gis'}->distance($self->{'lat'}, $self->{'long'}, $location->lat(), $location->long());
 }
 
+=head2	attr
+
+Get/set location attributes, e.g. city
+
+    $location->city('London');
+    $location->country('UK');
+    print $location->as_string(), "\n";
+
+=cut
+
+sub AUTOLOAD {
+	our $AUTOLOAD;
+	my $key = $AUTOLOAD;
+
+	$key =~ s/.*:://;
+
+	return if($key eq 'DESTROY');
+
+	my $self = shift;
+
+	if(my $value = shift) {
+		$self->{$key} = $value;
+	}
+
+	return $self->{$key};
+}
+
+=head2	as_string
+
+Prints the object in human-readable format.
+
+=cut
+
+sub as_string {
+	my $self = shift;
+
+	my $rc;
+	foreach my $field('number', 'street', 'city', 'county', 'state', 'country') {
+		if(my $value = $self->{$field}) {
+			$rc .= ', ' if($rc);
+			$rc .= $value;
+		}
+	}
+
+	return $rc;
+}
+
 =head1 AUTHOR
 
 Nigel Horne <njh@bandsman.co.uk>
