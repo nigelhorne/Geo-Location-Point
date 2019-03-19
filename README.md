@@ -1,6 +1,6 @@
 # NAME
 
-Geo::Location -
+Geo::Location::Point -
 Location information
 
 # VERSION
@@ -9,19 +9,19 @@ Version 0.01
 
 # SYNOPSIS
 
-    use Geo::Location;
+    use Geo::Location::Point;
 
-    my $location = Geo::Location->new();
+    my $location = Geo::Location::Point->new();
 
 # DESCRIPTION
 
-Geo::Location stores a place.
+Geo::Location::Point stores a place.
 
 # METHODS
 
 ## new
 
-    $location = Geo::Location->new();
+    $location = Geo::Location::Point->new();
 
 ## lat
 

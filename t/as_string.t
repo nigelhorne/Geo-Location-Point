@@ -6,11 +6,11 @@ use Test::Most tests => 4;
 use Test::NoWarnings;
 
 BEGIN {
-	use_ok('Geo::Location');
+	use_ok('Geo::Location::Point');
 }
 
 DISTANCE: {
-	my $loc = new_ok('Geo::Location' => [
+	my $loc = new_ok('Geo::Location::Point' => [
 		lat => 38.9,
 		long => -77.04,
 		number => 1600,

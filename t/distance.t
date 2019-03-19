@@ -7,17 +7,17 @@ use Test::NoWarnings;
 use Test::Number::Delta;
 
 BEGIN {
-	use_ok('Geo::Location');
+	use_ok('Geo::Location::Point');
 }
 
 DISTANCE: {
-	my $loc1 = new_ok('Geo::Location' => [
+	my $loc1 = new_ok('Geo::Location::Point' => [
 		lat => 51.34203083,
 		long => 1.31609075,
 		county => 'Kent',
 		country => 'GB'
 	]);
-	my $loc2 = new_ok('Geo::Location' => [
+	my $loc2 = new_ok('Geo::Location::Point' => [
 		lat => 51.34015944,
 		long => 1.31580976,
 		county => 'Kent',
