@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::Most tests => 3;
+use Test::Most tests => 4;
 use Test::NoWarnings;
 
 BEGIN {
@@ -20,5 +20,5 @@ DISTANCE: {
 		country => 'US'
 	]);
 
-	diag($loc->as_string());
+	ok($loc->as_string() eq '1600 Pennsylvania Ave NW, Washington, DC, US');
 }

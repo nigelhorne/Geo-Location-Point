@@ -133,11 +133,16 @@ sub as_string {
 	my $self = shift;
 
 	my $rc;
+
 	foreach my $field('number', 'street', 'city', 'county', 'state', 'country') {
 		if(my $value = $self->{$field}) {
 			$rc .= ', ' if($rc);
 			$rc .= $value;
 		}
+	}
+
+	if($self->{'number'}) {
+		$rc =~ s/,//;
 	}
 
 	return $rc;
