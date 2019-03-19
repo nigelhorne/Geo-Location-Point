@@ -14,13 +14,13 @@ perl:
   - "5.14"
   - "5.12"
 
-sudo: false
-
 before_install:
+  - sudo apt-get update -q
+  - sudo apt-get install -y libdist-zilla-perl
   cpanm -n Devel::Cover::Report::Coveralls Test::Pod::Spelling::CommonMistakes Test::Portability::Files
 
 install:
   - cpanm -v --installdeps --notest .
 
 script:
-  perl Makefile.PL && make && cover -test -report coveralls
+  dzil test && cover -test -report coveralls
