@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::Most tests => 5;
+use Test::Most tests => 6;
 use Test::NoWarnings;
 use Test::Number::Delta;
 
@@ -25,4 +25,5 @@ DISTANCE: {
 	]);
 
 	delta_within($loc1->distance($loc2)->yards(), 300, 100);
+	ok($loc1->distance($loc2)->yards() == $loc2->distance($loc1)->yards());
 }
