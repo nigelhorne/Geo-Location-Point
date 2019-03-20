@@ -132,6 +132,10 @@ Prints the object in human-readable format.
 sub as_string {
 	my $self = shift;
 
+	if($self->{'location'}) {
+		return $self->{'location'};
+	}
+
 	my $rc;
 
 	foreach my $field('number', 'street', 'city', 'county', 'state', 'country') {
@@ -145,7 +149,7 @@ sub as_string {
 		$rc =~ s/,//;
 	}
 
-	return $rc;
+	return $self->{'location'} = $rc;
 }
 
 =head1 AUTHOR
