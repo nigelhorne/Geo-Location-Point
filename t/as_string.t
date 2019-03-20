@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::Most tests => 4;
+use Test::Most tests => 5;
 use Test::NoWarnings;
 
 BEGIN {
@@ -16,9 +16,10 @@ DISTANCE: {
 		number => 1600,
 		street => 'Pennsylvania Ave NW',
 		city => 'Washington',
-		state => 'DC',	# Not technically true!
 		country => 'US'
 	]);
 
+	$loc->state('DC');	# Not technically true!
+	ok($loc->number() == 1600);
 	ok($loc->as_string() eq '1600 Pennsylvania Ave NW, Washington, DC, US');
 }
