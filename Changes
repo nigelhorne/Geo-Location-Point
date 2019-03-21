@@ -2,6 +2,7 @@ Revision history for Geo::Location::Point
 
 0.02
 	as_string() now returns the location attribute if that has been set
+	minimum version set to 5.10.0 because of //=
 
 0.01	Tue 19 Mar 18:16:48 EDT 2019
         First version

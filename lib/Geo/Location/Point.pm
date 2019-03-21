@@ -1,5 +1,6 @@
 package Geo::Location::Point;
 
+use 5.10.0;
 use strict;
 use warnings;
 
