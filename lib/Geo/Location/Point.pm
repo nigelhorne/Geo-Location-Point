@@ -4,6 +4,7 @@ use 5.10.0;
 use strict;
 use warnings;
 
+use Carp;
 use GIS::Distance;
 
 =head1 NAME
@@ -48,8 +49,8 @@ sub new {
 
 	my %args = (ref($_[0]) eq 'HASH') ? %{$_[0]} : @_;
 
-	die unless($args{'lat'});
-	die unless($args{'long'});
+	Carp::croak(__PACKAGE__, ': latitude not given') unless(defined($args{'lat'}));
+	Carp::croak(__PACKAGE__, ': longitude not given') unless(defined($args{'long'}));
 
 	return bless \%args, $class;
 }
