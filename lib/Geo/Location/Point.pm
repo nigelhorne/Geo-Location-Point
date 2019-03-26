@@ -49,8 +49,14 @@ sub new {
 
 	my %args = (ref($_[0]) eq 'HASH') ? %{$_[0]} : @_;
 
-	Carp::croak(__PACKAGE__, ': latitude not given') unless(defined($args{'lat'}));
-	Carp::croak(__PACKAGE__, ': longitude not given') unless(defined($args{'long'}));
+	if(!defined($args{'lat'})) {
+		Carp::carp(__PACKAGE__, ': latitude not given');
+		return;
+	}
+	if(!defined($args{'long'})) {
+		Carp::carp(__PACKAGE__, ': longitude not given');
+		return;
+	}
 
 	return bless \%args, $class;
 }
