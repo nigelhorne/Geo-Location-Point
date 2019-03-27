@@ -29,13 +29,14 @@ install:
   - cmd: mkdir %APPVEYOR_BUILD_FOLDER%\tmp
   - cmd: set TMPDIR=%APPVEYOR_BUILD_FOLDER%\tmp
   - cpan App::cpanminus
+  - cpanm -n Dist::Zilla
+  - dzil authordeps --missing | cpanm -n
+  - dzil listdeps --missing | cpanm -n
   - cmd: cpanm -q --showdeps --with-develop --with-suggests . | findstr /v "^perl\>" | cpanm -n
   - cpanm -v --installdeps .
   - cmd: 'echo End install at: & time /t'
 
-build_script:
-  - perl Makefile.PL
+build: off
 
 test_script:
-  - cmd: gmake test
-  - sh: make test
+  - dzil test -v
