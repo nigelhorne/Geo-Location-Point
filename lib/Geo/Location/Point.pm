@@ -106,6 +106,82 @@ sub distance {
 	return $self->{'gis'}->distance($self->{'lat'}, $self->{'long'}, $location->lat(), $location->long());
 }
 
+=head2	as_string
+
+Prints the object in human-readable format.
+
+=cut
+
+sub as_string {
+	my $self = shift;
+
+	if($self->{'location'}) {
+		return $self->{'location'};
+	}
+
+	my $rc = $self->{'name'};
+	if($rc) {
+		$rc = ucfirst(lc($rc));
+	}
+
+	foreach my $field('house_number', 'number', 'road', 'street', 'city', 'county', 'state_district', 'state', 'country') {
+		if(my $value = $self->{$field}) {
+			if($rc) {
+				if(($field eq 'street') || ($field eq 'road')) {
+					if($self->{'number'} || $self->{'house_number'}) {
+						$rc .= ' ';
+					} else {
+						$rc .= ', '
+					}
+				} else {
+					$rc .= ', ';
+				}
+			} elsif($rc) {
+				$rc .= ', ';
+			}
+			my $leave_case = 0;
+			if(my $country = $self->{'country'}) {
+				if($country eq 'US') {
+					if(($field eq 'state') || ($field eq 'country')) {
+						$leave_case = 1;
+					}
+				} elsif(($country eq 'Canada') || ($country eq 'Australia')) {
+					if($field eq 'state') {
+						$leave_case = 1;
+					}
+				}
+			}
+			if($leave_case) {
+				$rc .= $value;
+			} else {
+				$rc .= $self->_sortoutcase($value);
+				if((($field eq 'street') || ($field eq 'road')) &&
+				   ($rc =~ /(.+)\s([NS][ew])$/)) {
+					# e.g South Street NW
+					$rc = "$1 " . uc($2);
+				}
+			}
+		}
+	}
+
+	return $self->{'location'} = $rc;
+}
+
+sub _sortoutcase {
+	my $self = shift;
+	my $field = lc(shift);
+	my $ret;
+
+	foreach (split(/ /, $field)) {
+		if($ret) {
+			$ret .= ' ';
+		}
+		$ret .= ucfirst($_);
+	}
+
+	$ret;
+}
+
 =head2	attr
 
 Get/set location attributes, e.g. city
@@ -131,35 +207,6 @@ sub AUTOLOAD {
 	}
 
 	return $self->{$key};
-}
-
-=head2	as_string
-
-Prints the object in human-readable format.
-
-=cut
-
-sub as_string {
-	my $self = shift;
-
-	if($self->{'location'}) {
-		return $self->{'location'};
-	}
-
-	my $rc;
-
-	foreach my $field('number', 'street', 'city', 'county', 'state', 'country') {
-		if(my $value = $self->{$field}) {
-			$rc .= ', ' if($rc);
-			$rc .= $value;
-		}
-	}
-
-	if($self->{'number'}) {
-		$rc =~ s/,//;
-	}
-
-	return $self->{'location'} = $rc;
 }
 
 =head1 AUTHOR
