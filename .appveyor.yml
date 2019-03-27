@@ -29,7 +29,7 @@ install:
   - cmd: mkdir %APPVEYOR_BUILD_FOLDER%\tmp
   - cmd: set TMPDIR=%APPVEYOR_BUILD_FOLDER%\tmp
   - cpan App::cpanminus
-  - cpanm -n Dist::Zilla
+  - cpanm -n Dist::Zilla Test::Pod::Coverage
   - dzil authordeps --missing | cpanm -n
   - dzil listdeps --missing | cpanm -n
   - git config --global user.email "njh@bandsman.co.uk"
