@@ -49,10 +49,12 @@ sub new {
 
 	my %args = (ref($_[0]) eq 'HASH') ? %{$_[0]} : @_;
 
+	$args{'lat'} //= $args{'latitude'};
 	if(!defined($args{'lat'})) {
 		Carp::carp(__PACKAGE__, ': latitude not given');
 		return;
 	}
+	$args{'long'} //= $args{'longitude'};
 	if(!defined($args{'long'})) {
 		Carp::carp(__PACKAGE__, ': longitude not given');
 		return;
