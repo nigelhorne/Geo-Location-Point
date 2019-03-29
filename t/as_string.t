@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::Most tests => 5;
+use Test::Most tests => 7;
 use Test::NoWarnings;
 
 BEGIN {
@@ -22,4 +22,17 @@ DISTANCE: {
 	$loc->state('DC');	# Not technically true!
 	ok($loc->number() == 1600);
 	ok($loc->as_string() eq '1600 Pennsylvania Ave NW, Washington, DC, US');
+
+	$loc = new_ok('Geo::Location::Point' => [
+		# MaxMind
+		'Region' => 'IN',
+		'City' => 'new brunswick',
+		'Longitude' => '-86.5227778',
+		'Country' => 'us',
+		'Latitude' => '39.9441667',
+		'Population' => '',
+		'AccentCity' => 'New Brunswick'
+	]);
+
+	ok($loc->as_string() =~ /New Brunswick/);
 }

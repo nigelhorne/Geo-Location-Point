@@ -5,6 +5,7 @@ Revision history for Geo::Location::Point
 	minimum version set to 5.10.0 because of //=
 	Carp on error rather than just dying
 	Allow latitude and longitude to be given instead of lat and long
+	Import values from MaxMind database
 
 0.01	Tue 19 Mar 18:16:48 EDT 2019
         First version

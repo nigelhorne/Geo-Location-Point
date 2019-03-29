@@ -124,7 +124,7 @@ sub as_string {
 		$rc = ucfirst(lc($rc));
 	}
 
-	foreach my $field('house_number', 'number', 'road', 'street', 'city', 'county', 'state_district', 'state', 'country') {
+	foreach my $field('house_number', 'number', 'road', 'street', 'AccentCity', 'city', 'county', 'Region', 'state_district', 'state', 'country', 'Country') {
 		if(my $value = $self->{$field}) {
 			if($rc) {
 				if(($field eq 'street') || ($field eq 'road')) {
@@ -140,10 +140,13 @@ sub as_string {
 				$rc .= ', ';
 			}
 			my $leave_case = 0;
-			if(my $country = $self->{'country'}) {
-				if($country eq 'US') {
-					if(($field eq 'state') || ($field eq 'country')) {
+			if(my $country = $self->{'country'} // $self->{'Country'}) {
+				if(uc($country) eq 'US') {
+					if(($field eq 'state') || ($field eq 'Region') || (lc($field) eq 'country')) {
 						$leave_case = 1;
+						if(lc($field) eq 'country') {
+							$value = 'US';
+						}
 					}
 				} elsif(($country eq 'Canada') || ($country eq 'Australia')) {
 					if($field eq 'state') {
