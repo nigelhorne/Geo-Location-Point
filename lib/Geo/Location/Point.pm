@@ -156,6 +156,7 @@ sub as_string {
 				} elsif(uc($country) eq 'GB') {
 					if(lc($field) eq 'country') {
 						$leave_case = 1;
+						$value = 'GB';
 					}
 				}
 			}
