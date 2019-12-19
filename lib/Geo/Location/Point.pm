@@ -35,8 +35,6 @@ Geo::Location::Point stores a place.
 
 =cut
 
-use Data::Dumper;
-
 sub new {
 	my $proto = shift;
 	my $class = ref($proto) || $proto;
