@@ -15,8 +15,8 @@ WriteMakefile(
 	TEST_REQUIRES => {
 		'Test::Carp' => 0,
 		'Test::Most' => 0,
-		'Text::Number::Delta' => 0,
 		'Test::NoWarnings' => 0,
+		'Test::Number::Delta' => 0,
 	},
     PREREQ_PM => {
 	'Carp' => 0,
