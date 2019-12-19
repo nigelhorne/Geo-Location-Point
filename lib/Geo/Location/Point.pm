@@ -9,8 +9,7 @@ use GIS::Distance;
 
 =head1 NAME
 
-Geo::Location::Point -
-Location information
+Geo::Location::Point - Location information
 
 =head1 VERSION
 
@@ -22,15 +21,13 @@ our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
+Geo::Location::Point stores a place.
+
     use Geo::Location::Point;
 
     my $location = Geo::Location::Point->new();
 
-=head1 DESCRIPTION
-
-Geo::Location::Point stores a place.
-
-=head1 METHODS
+=head1 SUBROUTINES/METHODS
 
 =head2 new
 
