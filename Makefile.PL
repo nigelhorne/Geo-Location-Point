@@ -13,16 +13,14 @@ WriteMakefile(
       : ()),
     PL_FILES	=> {},
 	TEST_REQUIRES => {
+		'Test::Carp' => 0,
 		'Test::Most' => 0,
+		'Text::Number::Delta' => 0,
 		'Test::NoWarnings' => 0,
 	},
     PREREQ_PM => {
-	'Encode' => 0,
-	'JSON' => 0,
-	'HTTP::Request' => 0,
-	'LWP::UserAgent' => 0,
-	'LWP::Protocol::https' => 0,
-	'URI' => 0,
+	'Carp' => 0,
+	'GIS::Distance' => 0,
     },
     dist		=> { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean		=> { FILES => 'Geo-Location-Point-*' },
@@ -40,5 +38,5 @@ WriteMakefile(
 		}
 	},
     },
-    MIN_PERL_VERSION	=> '5.6.2'	# Probably would work, but never tested on earlier versions than this
+    MIN_PERL_VERSION	=> '5.10.0',
 );
