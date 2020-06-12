@@ -6,8 +6,16 @@ MANIFEST			This list of files
 README.md
 t/as_string.t
 t/carp.t
+t/coverage.t
 t/distance.t
 t/links.t
+t/manifest.t
 t/no404s.t
 t/noopentickets.t
+t/pod-cm.t
+t/pod.t
+t/port.t
 t/spelling.t
+t/unused.t
+t/used.t
+t/vars.t

@@ -174,16 +174,16 @@ sub as_string {
 sub _sortoutcase {
 	my $self = shift;
 	my $field = lc(shift);
-	my $ret;
+	my $rc;
 
 	foreach (split(/ /, $field)) {
-		if($ret) {
-			$ret .= ' ';
+		if($rc) {
+			$rc .= ' ';
 		}
-		$ret .= ucfirst($_);
+		$rc .= ucfirst($_);
 	}
 
-	$ret;
+	return $rc;
 }
 
 =head2	attr
