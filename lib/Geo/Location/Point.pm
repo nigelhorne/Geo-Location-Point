@@ -7,6 +7,8 @@ use warnings;
 use Carp;
 use GIS::Distance;
 
+use overload '""' => \&as_string;
+
 =head1 NAME
 
 Geo::Location::Point - Location information
@@ -193,6 +195,7 @@ Get/set location attributes, e.g. city
     $location->city('London');
     $location->country('UK');
     print $location->as_string(), "\n";
+    print "$location\n";	# Calls as_string
 
 =cut
 
@@ -229,7 +232,7 @@ L<Geo::Point>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2019 Nigel Horne.
+Copyright 2019-2020 Nigel Horne.
 
 The program code is released under the following licence: GPL2 for personal use on a single computer.
 All other users (including Commercial, Charity, Educational, Government)

@@ -2,6 +2,7 @@ Revision history for Geo::Location::Point
 
 0.04
 	Upgrade from Dist::Zilla to ExtUtils::MakeMaker
+	Added overload '""' to map to as_string
 
 0.03	Wed 17 Apr 16:35:20 EDT 2019
 	Don't turn GB into Gb
