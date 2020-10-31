@@ -1,5 +1,8 @@
 Revision history for Geo::Location::Point
 
+0.05
+	Fix https://github.com/nigelhorne/Geo-Coder-Free/issues/48
+
 0.04	Fri Oct 30 09:31:17 EDT 2020
 	Upgrade from Dist::Zilla to ExtUtils::MakeMaker
 	Added overload '""' to map to as_string

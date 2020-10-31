@@ -7,7 +7,11 @@ use warnings;
 use Carp;
 use GIS::Distance;
 
-use overload '""' => \&as_string;
+use overload (
+	'""' => \&as_string,
+	bool => sub { 1 },
+	fallback => 1	# So that boolean tests don't cause as_string to be called
+);
 
 =head1 NAME
 
