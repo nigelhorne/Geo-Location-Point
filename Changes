@@ -1,7 +1,8 @@
 Revision history for Geo::Location::Point
 
-0.05
+0.05	Sat Oct 31 05:24:53 EDT 2020
 	Fix https://github.com/nigelhorne/Geo-Coder-Free/issues/48
+	Added equal() and overloaded == to map to map to it
 
 0.04	Fri Oct 30 09:31:17 EDT 2020
 	Upgrade from Dist::Zilla to ExtUtils::MakeMaker

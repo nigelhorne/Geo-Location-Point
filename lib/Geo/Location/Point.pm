@@ -8,6 +8,7 @@ use Carp;
 use GIS::Distance;
 
 use overload (
+	'==' => \&equal,
 	'""' => \&as_string,
 	bool => sub { 1 },
 	fallback => 1	# So that boolean tests don't cause as_string to be called
@@ -19,11 +20,11 @@ Geo::Location::Point - Location information
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head1 SYNOPSIS
 
@@ -105,6 +106,24 @@ sub distance {
 	$self->{'gis'} //= GIS::Distance->new();
 
 	return $self->{'gis'}->distance($self->{'lat'}, $self->{'long'}, $location->lat(), $location->long());
+}
+
+=head2	equal
+
+Are two points the same?
+
+    my $loc1 = location->new(lat => 2, long => 2);
+    my $loc2 = location->new(lat => 2, long => 2);
+    print ($loc1 == $loc2), "\n";	# Prints 1
+
+=cut
+
+sub equal {
+	my $self = shift;
+	my $other = shift;
+
+	# return ($self->distance($other) <= 1e9);
+	return(abs($self->lat() - $other->lat() <= 1e9) && abs($self->long() - $other->long() <= 1e9));
 }
 
 =head2	as_string

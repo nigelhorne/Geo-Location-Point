@@ -4,7 +4,7 @@ Geo::Location::Point - Location information
 
 # VERSION
 
-Version 0.04
+Version 0.05
 
 # SYNOPSIS
 
@@ -34,6 +34,14 @@ Geo::Location::Point stores a place.
 
 Determine the distance between two locations,
 returns a [Class::Measure::Length](https://metacpan.org/pod/Class%3A%3AMeasure%3A%3ALength) object.
+
+## equal
+
+Are two points the same?
+
+    my $loc1 = location->new(lat => 2, long => 2);
+    my $loc2 = location->new(lat => 2, long => 2);
+    print ($loc1 == $loc2), "\n";       # Prints 1
 
 ## as\_string
 
