@@ -1,7 +1,7 @@
 Revision history for Geo::Location::Point
 
 0.06
-	Fix the equals() function
+	Fix the equals() and not_equals() functions
 
 0.05	Sat Oct 31 05:24:53 EDT 2020
 	Fix https://github.com/nigelhorne/Geo-Coder-Free/issues/48

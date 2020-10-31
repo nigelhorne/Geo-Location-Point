@@ -123,10 +123,8 @@ sub equal {
 	my $self = shift;
 	my $other = shift;
 
-	# return ($self->distance($other) <= 1e9);
-	# ::diag(__LINE__);
-	# ::diag(abs($self->lat() - $other->lat()), ',', abs($self->long() - $other->long()));
-	return(abs(($self->lat() - $other->lat()) <= 1e-9) && abs(($self->long() - $other->long()) <= 1e-9));
+	# return ($self->distance($other) <= 1e-9);
+	return((abs($self->lat() - $other->lat()) <= 1e-9) && (abs(($self->long() - $other->long())) <= 1e-9));
 }
 
 =head2	not_equal
@@ -143,7 +141,6 @@ sub not_equal {
 	my $self = shift;
 	my $other = shift;
 
-	# ::diag(__LINE__);
 	return(!$self->equal($other));
 }
 
