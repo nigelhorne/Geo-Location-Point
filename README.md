@@ -4,7 +4,7 @@ Geo::Location::Point - Location information
 
 # VERSION
 
-Version 0.05
+Version 0.06
 
 # SYNOPSIS
 
@@ -42,6 +42,14 @@ Are two points the same?
     my $loc1 = location->new(lat => 2, long => 2);
     my $loc2 = location->new(lat => 2, long => 2);
     print ($loc1 == $loc2), "\n";       # Prints 1
+
+## not\_equal
+
+Are two points different same?
+
+    my $loc1 = location->new(lat => 2, long => 2);
+    my $loc2 = location->new(lat => 2, long => 2);
+    print ($loc1 != $loc2), "\n";       # Prints 0
 
 ## as\_string
 
