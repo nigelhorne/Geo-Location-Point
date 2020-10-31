@@ -1,5 +1,8 @@
 Revision history for Geo::Location::Point
 
+0.06
+	Fix the equals() function
+
 0.05	Sat Oct 31 05:24:53 EDT 2020
 	Fix https://github.com/nigelhorne/Geo-Coder-Free/issues/48
 	Added equal() and overloaded == to map to map to it

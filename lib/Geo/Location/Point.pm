@@ -9,6 +9,7 @@ use GIS::Distance;
 
 use overload (
 	'==' => \&equal,
+	'!=' => \&not_equal,
 	'""' => \&as_string,
 	bool => sub { 1 },
 	fallback => 1	# So that boolean tests don't cause as_string to be called
@@ -123,7 +124,27 @@ sub equal {
 	my $other = shift;
 
 	# return ($self->distance($other) <= 1e9);
-	return(abs($self->lat() - $other->lat() <= 1e9) && abs($self->long() - $other->long() <= 1e9));
+	# ::diag(__LINE__);
+	# ::diag(abs($self->lat() - $other->lat()), ',', abs($self->long() - $other->long()));
+	return(abs(($self->lat() - $other->lat()) <= 1e-9) && abs(($self->long() - $other->long()) <= 1e-9));
+}
+
+=head2	not_equal
+
+Are two points different same?
+
+    my $loc1 = location->new(lat => 2, long => 2);
+    my $loc2 = location->new(lat => 2, long => 2);
+    print ($loc1 != $loc2), "\n";	# Prints 0
+
+=cut
+
+sub not_equal {
+	my $self = shift;
+	my $other = shift;
+
+	# ::diag(__LINE__);
+	return(!$self->equal($other));
 }
 
 =head2	as_string

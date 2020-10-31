@@ -8,6 +8,7 @@ t/as_string.t
 t/carp.t
 t/coverage.t
 t/distance.t
+t/equal.t
 t/links.t
 t/manifest.t
 t/no404s.t
