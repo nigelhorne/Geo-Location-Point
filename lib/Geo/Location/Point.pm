@@ -1,6 +1,6 @@
 package Geo::Location::Point;
 
-use 5.10.0;
+use 5.10.0;	# For the //= operator
 use strict;
 use warnings;
 
