@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::Most tests => 8;
+use Test::Most tests => 11;
 use Test::NoWarnings;
 
 BEGIN {
@@ -36,4 +36,16 @@ DISTANCE: {
 
 	ok($loc->as_string() =~ /New Brunswick/);
 	ok($loc =~ /New Brunswick/);
+
+	$loc = new_ok('Geo::Location::Point' => [
+		'Region' => 'Kent',
+		'City' => 'Minster',
+		'Longitude' => 51.34,
+		'Country' => 'gb',
+		'Latitude' => 1.32,
+		'AccentCity' => 'Minster',
+	]);
+
+	ok($loc->Country() eq 'gb');
+	like($loc->as_string(), qr/, GB/, 'GB is put in upper case in as_string');
 }

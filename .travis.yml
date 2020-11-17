@@ -1,3 +1,4 @@
+---
 language: perl
 
 os:
@@ -5,18 +6,22 @@ os:
   # - osx
 
 arch:
- - amd64
- # - arm64	# Gets 404 error
+  - amd64
+  - ppc64le
+  - s390x
+  # - arm64	# Gets 404 error
 
-env: AUTOMATED_TESTING=1
+env:
+  - AUTOMATED_TESTING=1
+  - PERL_CPANM_OPT="--notest --force --skip-satisfied"
 
 perl:
   - "5.30"
-  - "5.28"
+  # - "5.28" # Travis gets 404 errors trying to find some older perls
   - "5.26"
   - "5.24"
-  - "5.22"
-  # - "5.20"	# Travis gets 404 errors trying to find older perls
+  # - "5.22"
+  # - "5.20"
   # - "5.18"
   # - "5.16"
   # - "5.14"
