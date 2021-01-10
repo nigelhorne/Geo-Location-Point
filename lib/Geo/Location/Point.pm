@@ -129,19 +129,18 @@ sub equal {
 
 =head2	not_equal
 
-Are two points different same?
+Are two points different different?
 
     my $loc1 = location->new(lat => 2, long => 2);
     my $loc2 = location->new(lat => 2, long => 2);
-    print ($loc1 != $loc2), "\n";	# Prints 0
+    print ($loc1 != $loc2), "\n";	# Prints 1
 
 =cut
 
 sub not_equal {
 	my $self = shift;
-	my $other = shift;
 
-	return(!$self->equal($other));
+	return(!$self->equal(shift));
 }
 
 =head2	as_string

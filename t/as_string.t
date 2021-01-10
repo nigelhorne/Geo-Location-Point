@@ -9,7 +9,7 @@ BEGIN {
 	use_ok('Geo::Location::Point');
 }
 
-DISTANCE: {
+STRING: {
 	my $loc = new_ok('Geo::Location::Point' => [
 		lat => 38.9,
 		long => -77.04,

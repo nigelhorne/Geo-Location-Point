@@ -45,11 +45,11 @@ Are two points the same?
 
 ## not\_equal
 
-Are two points different same?
+Are two points different different?
 
     my $loc1 = location->new(lat => 2, long => 2);
     my $loc2 = location->new(lat => 2, long => 2);
-    print ($loc1 != $loc2), "\n";       # Prints 0
+    print ($loc1 != $loc2), "\n";       # Prints 1
 
 ## as\_string
 
