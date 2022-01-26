@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::Most tests => 11;
+use Test::Most tests => 12;
 use Test::NoWarnings;
 
 BEGIN {
@@ -19,9 +19,10 @@ STRING: {
 		country => 'US'
 	]);
 
+	is($loc->as_string(), '1600 Pennsylvania Ave NW, Washington, US', 'Test as_string');
 	$loc->state('DC');	# Not technically true!
-	ok($loc->number() == 1600);
-	ok($loc->as_string() eq '1600 Pennsylvania Ave NW, Washington, DC, US');
+	cmp_ok($loc->number(), '==', 1600, 'House number is 1600');
+	is($loc->as_string(), '1600 Pennsylvania Ave NW, Washington, DC, US', 'Test as_string');
 
 	$loc = new_ok('Geo::Location::Point' => [
 		# MaxMind
@@ -34,8 +35,8 @@ STRING: {
 		'AccentCity' => 'New Brunswick'
 	]);
 
-	ok($loc->as_string() =~ /New Brunswick/);
-	ok($loc =~ /New Brunswick/);
+	like($loc->as_string(), qr/New Brunswick/, 'As string includes province');
+	like($loc, qr/New Brunswick/, 'print the object calls as_string');
 
 	$loc = new_ok('Geo::Location::Point' => [
 		'Region' => 'Kent',
@@ -46,6 +47,6 @@ STRING: {
 		'AccentCity' => 'Minster',
 	]);
 
-	ok($loc->Country() eq 'gb');
+	is($loc->Country(), 'gb', 'Country is gb');
 	like($loc->as_string(), qr/, GB/, 'GB is put in upper case in as_string');
 }

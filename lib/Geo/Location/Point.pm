@@ -180,7 +180,7 @@ sub as_string {
 			my $leave_case = 0;
 			if(my $country = $self->{'country'} // $self->{'Country'}) {
 				if(uc($country) eq 'US') {
-					if(($field eq 'state') || ($field eq 'Region') || (lc($field) eq 'country')) {
+					if(($field eq 'state') || ($field eq 'region') || ($field eq 'country')) {
 						$leave_case = 1;
 						if(lc($field) eq 'country') {
 							$value = 'US';
@@ -251,6 +251,7 @@ sub AUTOLOAD {
 
 	if(my $value = shift) {
 		$self->{$key} = $value;
+		delete $self->{'location'};	# Invalidate the cache
 	}
 
 	return $self->{$key};
@@ -272,7 +273,7 @@ L<Geo::Point>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2019-2020 Nigel Horne.
+Copyright 2019-2022 Nigel Horne.
 
 The program code is released under the following licence: GPL2 for personal use on a single computer.
 All other users (including Commercial, Charity, Educational, Government)
