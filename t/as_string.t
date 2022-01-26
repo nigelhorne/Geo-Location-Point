@@ -35,8 +35,8 @@ STRING: {
 		'AccentCity' => 'New Brunswick'
 	]);
 
-	like($loc->as_string(), qr/New Brunswick/, 'As string includes province');
-	like($loc, qr/New Brunswick/, 'print the object calls as_string');
+	like($loc->as_string(), qr/^New Brunswick/, 'As string includes town');
+	like($loc, qr/^New Brunswick/, 'print the object calls as_string');
 
 	$loc = new_ok('Geo::Location::Point' => [
 		'Region' => 'Kent',
@@ -48,5 +48,5 @@ STRING: {
 	]);
 
 	is($loc->Country(), 'gb', 'Country is gb');
-	like($loc->as_string(), qr/, GB/, 'GB is put in upper case in as_string');
+	like($loc->as_string(), qr/, GB$/, 'GB is put in upper case in as_string');
 }
