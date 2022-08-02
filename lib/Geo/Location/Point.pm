@@ -129,7 +129,7 @@ sub equal {
 
 =head2	not_equal
 
-Are two points different different?
+Are two points different?
 
     my $loc1 = location->new(lat => 2, long => 2);
     my $loc2 = location->new(lat => 2, long => 2);
