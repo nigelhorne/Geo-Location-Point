@@ -4,6 +4,7 @@ Revision history for Geo::Location::Point
 	Fix case in field name traversal
 	Calls to as_string after setting a field after
 		calling as_string would return the old value
+	Fixed the documentation of and testing of equal()
 
 0.06	Sat Oct 31 08:40:18 EDT 2020
 	Fix the equals() and not_equals() functions
