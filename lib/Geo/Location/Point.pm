@@ -133,7 +133,7 @@ Are two points different?
 
     my $loc1 = Geo::Location::Point->new(lat => 2, long => 2);
     my $loc2 = Geo::Location::Point->new(lat => 2, long => 2);
-    print ($loc1 != $loc2), "\n";	# Prints 1
+    print ($loc1 != $loc2), "\n";	# Prints 0
 
 =cut
 
