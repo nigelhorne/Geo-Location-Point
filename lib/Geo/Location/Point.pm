@@ -214,8 +214,9 @@ sub as_string {
 }
 
 sub _sortoutcase {
-	my $self = shift;
-	my $field = lc(shift);
+	# my $self = shift;
+	# my $field = lc(shift);
+	my $field = $_[1];
 	my $rc;
 
 	foreach (split(/ /, $field)) {
