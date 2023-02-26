@@ -21,11 +21,11 @@ Geo::Location::Point - Location information
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =cut
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 =head1 SYNOPSIS
 
@@ -274,7 +274,7 @@ L<Geo::Point>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2019-2022 Nigel Horne.
+Copyright 2019-2023 Nigel Horne.
 
 The program code is released under the following licence: GPL2 for personal use on a single computer.
 All other users (including Commercial, Charity, Educational, Government)
