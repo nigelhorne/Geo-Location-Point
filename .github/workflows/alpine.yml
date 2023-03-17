@@ -33,7 +33,8 @@ jobs:
           cd $GITHUB_WORKSPACE
           cpanm -iqn ExtUtils::MakeMaker File::Spec Test::Most
           cpanm -iqn GIS::Distance Data::OptList Params::Util
-          cpanm -iqn --installdeps .
+          cpanm -iqn Test::Carp Test::NoWarnings
+          cpanm -iqn --skip-satisfied --installdeps --notest .
       - name: Make module
         run: |
           # find ~ -name build.log | xargs cat
