@@ -33,13 +33,13 @@ Geo::Location::Point stores a place.
 
     use Geo::Location::Point;
 
-    my $location = Geo::Location::Point->new();
+    my $location = Geo::Location::Point->new(latitude => 0.01, longitude => -71);
 
 =head1 SUBROUTINES/METHODS
 
 =head2 new
 
-    $location = Geo::Location::Point->new();
+    $location = Geo::Location::Point->new({ latitude => 0.01, longitude => -71 });
 
 =cut
 
