@@ -79,6 +79,12 @@ sub lat {
 	return $self->{'lat'};
 }
 
+sub latitude {
+	my $self = shift;
+
+	return $self->{'lat'};
+}
+
 =head2 long
 
     print 'Latitude: ', $location->lat(), "\n";
@@ -87,6 +93,12 @@ sub lat {
 =cut
 
 sub long {
+	my $self = shift;
+
+	return $self->{'long'};
+}
+
+sub longitude {
 	my $self = shift;
 
 	return $self->{'long'};
