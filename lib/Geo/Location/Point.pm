@@ -79,6 +79,12 @@ sub lat {
 	return $self->{'lat'};
 }
 
+=head2 latitude
+
+Synonym for lat().
+
+=cut
+
 sub latitude {
 	my $self = shift;
 
@@ -97,6 +103,12 @@ sub long {
 
 	return $self->{'long'};
 }
+
+=head2 longitude
+
+Synonym for long().
+
+=cut
 
 sub longitude {
 	my $self = shift;
