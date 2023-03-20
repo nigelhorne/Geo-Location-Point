@@ -14,13 +14,13 @@ WriteMakefile(
     PL_FILES	=> {},
 	TEST_REQUIRES => {
 		'Test::Carp' => 0,
+		'Test::Compile' => 0,
 		'Test::Most' => 0,
 		'Test::NoWarnings' => 0,
 		'Test::Number::Delta' => 0,
-	},
-    PREREQ_PM => {
-	'Carp' => 0,
-	'GIS::Distance' => 0,
+	}, PREREQ_PM => {
+		'Carp' => 0,
+		'GIS::Distance' => 0,
     },
     dist		=> { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean		=> { FILES => 'Geo-Location-Point-*' },

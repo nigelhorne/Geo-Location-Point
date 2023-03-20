@@ -32,7 +32,8 @@ jobs:
           git clone --recurse-submodules $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git
           cd $GITHUB_WORKSPACE
           cpanm -iqn ExtUtils::MakeMaker File::Spec Test::Most
-          cpanm -iqn GIS::Distance Data::OptList Params::Util
+          cpanm -iqn Class::Measure::Length GIS::Distance Data::OptList
+          cpanm -iqn Params::Util
           cpanm -iqn Test::Carp Test::NoWarnings
           cpanm -iqn --skip-satisfied --installdeps --notest .
       - name: Make module
