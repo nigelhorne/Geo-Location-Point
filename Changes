@@ -1,5 +1,8 @@
 Revision history for Geo::Location::Point
 
+0.09
+	Increased the test coverage
+
 0.08	Fri Mar 17 13:13:30 EDT 2023
 	Support the messages latitude and longitude
 

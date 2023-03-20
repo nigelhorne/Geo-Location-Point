@@ -41,9 +41,9 @@ STRING: {
 	$loc = new_ok('Geo::Location::Point' => [
 		'Region' => 'Kent',
 		'City' => 'Minster',
-		'Longitude' => 51.34,
+		'longitude' => 51.34,
 		'Country' => 'gb',
-		'Latitude' => 1.32,
+		'latitude' => 1.32,
 		'AccentCity' => 'Minster',
 	]);
 

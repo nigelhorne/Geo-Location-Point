@@ -44,13 +44,27 @@ Geo::Location::Point stores a place.
 =cut
 
 sub new {
-	my $proto = shift;
-	my $class = ref($proto) || $proto;
+	my $class = $_[0];
 
-	# Geo::Location::Point->new not Geo::Location::Point::new
-	return unless($class);
+	shift;
 
-	my %args = (ref($_[0]) eq 'HASH') ? %{$_[0]} : @_;
+	my %args;
+	if(ref($_[0]) eq 'HASH') {
+		%args = %{$_[0]};
+	} elsif(ref($_[0])) {
+		Carp::carp('Usage: ', __PACKAGE__, '->new(cache => $cache [, object => $object ], %args)');
+		return;
+	} elsif(@_ % 2 == 0) {
+		%args = @_;
+	}
+
+	if(!defined($class)) {
+		carp(__PACKAGE__, ' use ->new() not ::new() to instantiate');
+		return;
+	} elsif(ref($class)) {
+		# clone the given object
+		return bless { %{$class}, %args }, ref($class);
+	}
 
 	$args{'lat'} //= $args{'latitude'} // $args{'Latitude'};
 	if(!defined($args{'lat'})) {
@@ -126,7 +140,10 @@ returns a L<Class::Measure::Length> object.
 sub distance {
 	my ($self, $location) = @_;
 
-	die unless $location;
+	if(!defined($location)) {
+		Carp::carp('Usage: ', __PACKAGE__, '->distance($location)');
+		return;
+	}
 
 	$self->{'gis'} //= GIS::Distance->new();
 
