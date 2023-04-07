@@ -32,7 +32,7 @@ jobs:
           cd $RUNNER_WORKSPACE
           git clone --recurse-submodules $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git
           cd $GITHUB_WORKSPACE
-          cpanm -iqn ExtUtils::MakeMaker File::Spec
+          cpanm -iqn File::Spec ExtUtils::MakeMaker
           cpanm -iqn Class::Measure::Length GIS::Distance Data::OptList
           cpanm -iqn Test::Carp Test::NoWarnings
           cpanm -iqn --skip-satisfied --installdeps --notest .
