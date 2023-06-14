@@ -6,6 +6,7 @@ use warnings;
 
 use Carp;
 use GIS::Distance;
+use TimeZone::TimeZoneDB;
 
 use overload (
 	'==' => \&equal,
@@ -40,6 +41,8 @@ Geo::Location::Point stores a place.
 =head2 new
 
     $location = Geo::Location::Point->new({ latitude => 0.01, longitude => -71 });
+
+Takes one optional argument 'key' which is an API key for L<https://timezonedb.com> for looking up timezone data.
 
 =cut
 
@@ -184,6 +187,39 @@ sub not_equal {
 	return(!$self->equal(shift));
 }
 
+=head2	tz
+
+Returns the timezone of the location.
+
+=cut
+
+sub tz {
+	my $self = shift;
+
+	if(defined($self->{'key'})) {
+		return $self->{'tz'} if(defined($self->{'tz'}));
+
+		if(!defined($self->{'timezonedb'})) {
+			$self->{'timezonedb'} = TimeZone::TimeZoneDB->new(key => $self->{'key'});
+		}
+		$self->{'tz'} = $self->{'timezonedb'}->get_time_zone($self)->{'zoneName'};
+
+		return $self->{'tz'};
+	}
+}
+
+=head2	timezone
+
+Synonym for tz().
+
+=cut
+
+sub timezone {
+	my $self = shift;
+
+	return $self->tz();
+}
+
 =head2	as_string
 
 Prints the object in human-readable format.
@@ -311,7 +347,8 @@ it under the same terms as Perl itself.
 =head1 SEE ALSO
 
 L<GIS::Distance>,
-L<Geo::Point>
+L<Geo::Point>,
+L<TimeZone::TimeZoneDB>.
 
 =head1 LICENSE AND COPYRIGHT
 
