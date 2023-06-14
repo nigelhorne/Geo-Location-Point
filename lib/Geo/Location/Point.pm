@@ -6,7 +6,6 @@ use warnings;
 
 use Carp;
 use GIS::Distance;
-use TimeZone::TimeZoneDB;
 
 use overload (
 	'==' => \&equal,
@@ -200,6 +199,9 @@ sub tz {
 		return $self->{'tz'} if(defined($self->{'tz'}));
 
 		if(!defined($self->{'timezonedb'})) {
+			require TimeZone::TimeZoneDB;
+			TimeZone::TimeZoneDB->import();
+
 			$self->{'timezonedb'} = TimeZone::TimeZoneDB->new(key => $self->{'key'});
 		}
 		$self->{'tz'} = $self->{'timezonedb'}->get_time_zone($self)->{'zoneName'};
