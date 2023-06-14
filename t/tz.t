@@ -21,7 +21,7 @@ TZ: {
 			cmp_ok($point->tz(), 'eq', 'Europe/London', 'Ramsgate is in the UK timezone');
 		} else {
 			diag('Set TIMEZONEDB_KEY for your API key to timezonedb.com');
-			skip('Set TIMEZONEDB_KEY for your API key to timezonedb.com', 4);
+			skip('Set TIMEZONEDB_KEY for your API key to timezonedb.com', 2);
 		}
 	}
 }
