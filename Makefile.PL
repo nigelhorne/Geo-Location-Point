@@ -7,7 +7,7 @@ my $prereq = {
 	'GIS::Distance' => 0
 };
 
-if(defined($ENV{'TIMEZONEDB_KEY'})) {
+if($ENV{'TIMEZONEDB_KEY'}) {
 	$prereq->{'TimeZone::TimeZoneDB'} = 0;
 }
 
