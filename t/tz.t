@@ -10,7 +10,7 @@ BEGIN {
 
 TZ: {
 	SKIP: {
-		if(defined($ENV{'TIMEZONEDB_KEY'})) {
+		if($ENV{'TIMEZONEDB_KEY'}) {
 			# Ramsgate
 			my $point = new_ok('Geo::Location::Point' => [
 				latitude => 51.34,
