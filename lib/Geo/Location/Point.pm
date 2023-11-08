@@ -330,8 +330,8 @@ sub AUTOLOAD {
 	my $self = shift;
 
 	if(my $value = shift) {
-		$self->{$key} = $value;
 		delete $self->{'location'};	# Invalidate the cache
+		$self->{$key} = $value;
 	}
 
 	return $self->{$key};
