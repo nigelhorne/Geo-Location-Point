@@ -21,11 +21,11 @@ Geo::Location::Point - Location information
 
 =head1 VERSION
 
-Version 0.10
+Version 0.11
 
 =cut
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 =head1 SYNOPSIS
 
@@ -189,6 +189,7 @@ sub not_equal {
 =head2	tz
 
 Returns the timezone of the location.
+Needs L<TimeZone::TimeZoneDB>.
 
 =cut
 

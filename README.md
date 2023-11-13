@@ -4,7 +4,7 @@ Geo::Location::Point - Location information
 
 # VERSION
 
-Version 0.10
+Version 0.11
 
 # SYNOPSIS
 
@@ -64,6 +64,7 @@ Are two points different?
 ## tz
 
 Returns the timezone of the location.
+Needs [TimeZone::TimeZoneDB](https://metacpan.org/pod/TimeZone%3A%3ATimeZoneDB).
 
 ## timezone
 
