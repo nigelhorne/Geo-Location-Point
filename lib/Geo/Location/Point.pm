@@ -73,9 +73,18 @@ sub new {
 		Carp::carp(__PACKAGE__, ': latitude not given');
 		return;
 	}
+	if(abs($args{'lat'}) > 180) {
+		Carp::carp(__PACKAGE__, ': ', $args{'lat'}, ': invalid latitude');
+		return;
+	}
+
 	$args{'long'} //= $args{'longitude'} // $args{'Longitude'};
 	if(!defined($args{'long'})) {
 		Carp::carp(__PACKAGE__, ': longitude not given');
+		return;
+	}
+	if(abs($args{'long'}) > 180) {
+		Carp::carp(__PACKAGE__, ': ', $args{'long'}, ': invalid longitude');
 		return;
 	}
 
