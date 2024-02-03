@@ -29,7 +29,7 @@ our $VERSION = '0.11';
 
 =head1 SYNOPSIS
 
-Geo::Location::Point stores a place.
+Geo::Location::Point stores a place/location by latitude and longitude
 
     use Geo::Location::Point;
 
