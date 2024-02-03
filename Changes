@@ -2,6 +2,7 @@ Revision history for Geo::Location::Point
 
 0.12
 	Better argument validation
+	Added as_uri() method
 
 0.11	Mon Nov 13 13:35:32 EST 2023
 	Fix circular dependancy

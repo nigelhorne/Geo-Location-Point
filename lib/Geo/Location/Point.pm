@@ -318,6 +318,21 @@ sub _sortoutcase {
 	return $rc;
 }
 
+=head2	as_uri
+
+Prints the object as a URI string.
+See L<https://en.wikipedia.org/wiki/Geo_URI_scheme>.
+Arguably it should return a L<URI> object instead.
+
+=cut
+
+sub as_uri
+{
+	my $self = shift;
+
+	return 'geo:' . $self->{'latitude'} . ',' . $self->{'longitude'};
+}
+
 =head2	attr
 
 Get/set location attributes, e.g. city
@@ -367,7 +382,7 @@ L<TimeZone::TimeZoneDB>.
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2019-2023 Nigel Horne.
+Copyright 2019-2024 Nigel Horne.
 
 The program code is released under the following licence: GPL2 for personal use on a single computer.
 All other users (including Commercial, Charity, Educational, Government)
