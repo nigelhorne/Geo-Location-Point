@@ -87,6 +87,7 @@ sub new {
 		Carp::carp(__PACKAGE__, ': ', $args{'long'}, ': invalid longitude');
 		return;
 	}
+	$args{'lng'} = $args{'long'};
 
 	return bless \%args, $class;
 }
@@ -124,6 +125,18 @@ sub latitude {
 =cut
 
 sub long {
+	my $self = shift;
+
+	return $self->{'long'};
+}
+
+=head2	lng
+
+Synonym for long().
+
+=cut
+
+sub lng {
 	my $self = shift;
 
 	return $self->{'long'};
