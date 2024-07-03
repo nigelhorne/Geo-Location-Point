@@ -1,6 +1,6 @@
 Revision history for Geo::Location::Point
 
-0.12
+0.12	Tue Jul  2 21:30:04 EDT 2024
 	Better argument validation
 	Added as_uri() method
 	Added lng as a synonym for long
