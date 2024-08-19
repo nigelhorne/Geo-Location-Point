@@ -46,9 +46,7 @@ Takes one optional argument 'key' which is an API key for L<https://timezonedb.c
 =cut
 
 sub new {
-	my $class = $_[0];
-
-	shift;
+	my $class = shift;
 
 	my %args;
 	if(ref($_[0]) eq 'HASH') {
