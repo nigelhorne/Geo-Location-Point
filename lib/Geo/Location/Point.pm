@@ -6,6 +6,7 @@ use warnings;
 
 use Carp;
 use GIS::Distance;
+use Scalar::Util;
 
 use overload (
 	'==' => \&equal,
@@ -61,8 +62,8 @@ sub new {
 	if(!defined($class)) {
 		carp(__PACKAGE__, ' use ->new() not ::new() to instantiate');
 		return;
-	} elsif(ref($class)) {
-		# clone the given object
+	} elsif(Scalar::Util::blessed($class)) {
+		# If $class is an object, clone it with new arguments
 		return bless { %{$class}, %args }, ref($class);
 	}
 
@@ -87,6 +88,7 @@ sub new {
 	}
 	$args{'lng'} = $args{'long'};
 
+	# Return the blessed object
 	return bless \%args, $class;
 }
 
