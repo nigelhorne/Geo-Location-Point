@@ -5,6 +5,7 @@ Revision history for Geo::Location::Point
 	Use Test::DescribeMe to simplify tests
 	More new() testing
 	Added codecov.io support
+	Refactor _sortoutcase
 
 0.12	Tue Jul  2 21:30:04 EDT 2024
 	Better argument validation

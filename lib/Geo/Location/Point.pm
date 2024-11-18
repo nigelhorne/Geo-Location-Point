@@ -315,20 +315,13 @@ sub as_string {
 	return $self->{'location'} = $rc;
 }
 
-sub _sortoutcase {
-	# my $self = shift;
-	# my $field = lc(shift);
-	my $field = $_[1];
-	my $rc;
-
-	foreach (split(/ /, $field)) {
-		if($rc) {
-			$rc .= ' ';
-		}
-		$rc .= ucfirst($_);
-	}
-
-	return $rc;
+sub _sortoutcase
+{
+	# Use lc to ensure the input string is in lowercase before capitalisation,
+	#	split to break the string into words,
+	#	map to capitalise each word and
+	#	join to concatenate the capitalised words back into a single string with spaces
+	return join ' ', map { ucfirst } split ' ', lc($_[1]);
 }
 
 =head2	as_uri
