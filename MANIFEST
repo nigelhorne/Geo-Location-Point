@@ -20,6 +20,7 @@ t/eol.t
 t/equal.t
 t/links.t
 t/manifest.t
+t/modules-used.t
 t/no404s.t
 t/noopentickets.t
 t/pod-cm.t
@@ -30,5 +31,4 @@ t/pod.t
 t/port.t
 t/tz.t
 t/unused.t
-t/used.t
 t/vars.t

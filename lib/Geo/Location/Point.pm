@@ -222,8 +222,10 @@ sub tz {
 		return $self->{'tz'} if(defined($self->{'tz'}));
 
 		if(!defined($self->{'timezonedb'})) {
-			require TimeZone::TimeZoneDB;
-			TimeZone::TimeZoneDB->import();
+			unless(TimeZone::TimeZoneDB->can('get_time_zone')) {
+				require TimeZone::TimeZoneDB;
+				TimeZone::TimeZoneDB->import();
+			}
 
 			$self->{'timezonedb'} = TimeZone::TimeZoneDB->new(key => $self->{'key'});
 		}
