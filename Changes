@@ -7,6 +7,7 @@ Revision history for Geo::Location::Point
 	Added codecov.io support
 	Refactor _sortoutcase
 	Don't install TimeZone::TimeZoneDB if it's already installed
+	Use Test::Needs
 
 0.12	Tue Jul  2 21:30:04 EDT 2024
 	Better argument validation
