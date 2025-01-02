@@ -30,7 +30,10 @@ our $VERSION = '0.12';
 
 =head1 SYNOPSIS
 
-Geo::Location::Point stores a place/location by latitude and longitude
+Geo::Location::Point encapsulates geographical point data with latitude and longitude.
+It supports distance calculations,
+comparison between points,
+and provides various convenience methods for attributes like latitude, longitude, and related string representations
 
     use Geo::Location::Point;
 
@@ -40,9 +43,10 @@ Geo::Location::Point stores a place/location by latitude and longitude
 
 =head2 new
 
-    $location = Geo::Location::Point->new({ latitude => 0.01, longitude => -71 });
-
+Initialise a new object, accepting latitude and longitude via a hash or hash reference.
 Takes one optional argument 'key' which is an API key for L<https://timezonedb.com> for looking up timezone data.
+
+    $location = Geo::Location::Point->new({ latitude => 0.01, longitude => -71 });
 
 =cut
 
@@ -156,7 +160,7 @@ sub longitude {
 
 =head2	distance
 
-Determine the distance between two locations,
+Determine the distance between two geographical points,
 returns a L<Class::Measure::Length> object.
 
 =cut
@@ -176,7 +180,7 @@ sub distance {
 
 =head2	equal
 
-Are two points the same?
+Check if two points are identical within a small tolerance.
 
     my $loc1 = Geo::Location::Point->new(lat => 2, long => 2);
     my $loc2 = Geo::Location::Point->new(lat => 2, long => 2);
@@ -249,7 +253,8 @@ sub timezone {
 
 =head2	as_string
 
-Prints the object in human-readable format.
+Generate a human-readable string describing the point,
+incorporating additional attributes like city or country if available.
 
 =cut
 
@@ -328,7 +333,7 @@ sub _sortoutcase
 
 =head2	as_uri
 
-Prints the object as a URI string.
+Convert the point to a Geo URI scheme string (geo:latitude,longitude).
 See L<https://en.wikipedia.org/wiki/Geo_URI_scheme>.
 Arguably it should return a L<URI> object instead.
 
@@ -343,7 +348,7 @@ sub as_uri
 
 =head2	attr
 
-Get/set location attributes, e.g. city
+Get or set arbitrary attributes, such as city or country.
 
     $location->city('London');
     $location->country('UK');
@@ -379,6 +384,9 @@ it under the same terms as Perl itself.
 
 =head1 BUGS
 
+There is no validation on the attribute in the AUTOLOAD method,
+so typos such as "citty" will not be caught.
+
 =head1 SEE ALSO
 
 L<GIS::Distance>,
@@ -387,7 +395,7 @@ L<TimeZone::TimeZoneDB>.
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2019-2024 Nigel Horne.
+Copyright 2019-2025 Nigel Horne.
 
 The program code is released under the following licence: GPL2 for personal use on a single computer.
 All other users (including Commercial, Charity, Educational, Government)
