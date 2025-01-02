@@ -24,7 +24,7 @@ subtest 'Constructor tests' => sub {
 # Test 'equal' and 'not_equal' methods
 subtest 'Equality tests' => sub {
 	my $point1 = Geo::Location::Point->new({ latitude => 10, longitude => 20 });
-	my $point2 = Geo::Location::Point->new({ latitude => 10, longitude => 20 });
+	my $point2 = Geo::Location::Point->new(latitude => 10, longitude => 20);
 	my $point3 = Geo::Location::Point->new({ latitude => 15, longitude => 25 });
 
 	ok($point1 == $point2, 'Points are equal');
