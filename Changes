@@ -1,6 +1,6 @@
 Revision history for Geo::Location::Point
 
-0.13
+0.13	Tue Jan 21 10:33:46 EST 2025
 	Use gtar to create a distribution on Macs
 	Use Test::DescribeMe to simplify tests
 	More new() testing

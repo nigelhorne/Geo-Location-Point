@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use ExtUtils::MakeMaker 6.64;	# 6.64 for TEST_REQUIRES
+use ExtUtils::MakeMaker;
 
 my $dist = {
 	COMPRESS => 'gzip -9f',
@@ -24,6 +24,7 @@ WriteMakefile(
 	PREREQ_PM => {
 		'Carp' => 0,
 		'GIS::Distance' => 0,
+		'ExtUtils::MakeMaker' => 6.64,	# Minimum version for TEST_REQUIRES
 		'Scalar::Util' => 0
 	}, TEST_REQUIRES => {
 		'Test::Carp' => 0,
