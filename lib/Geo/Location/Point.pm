@@ -33,7 +33,7 @@ our $VERSION = '0.13';
 Geo::Location::Point encapsulates geographical point data with latitude and longitude.
 It supports distance calculations,
 comparison between points,
-and provides various convenience methods for attributes like latitude, longitude, and related string representations
+and provides various convenience methods for attributes like latitude, longitude, and related string representations.
 
     use Geo::Location::Point;
 
@@ -372,7 +372,7 @@ sub AUTOLOAD {
 		$self->{$key} = $value;
 	}
 
-	return $self->{$key};
+	return $self->{$key} || $self->{ucfirst($key)}
 }
 
 =head1 AUTHOR
