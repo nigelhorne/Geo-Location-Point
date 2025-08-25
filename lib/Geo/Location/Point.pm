@@ -184,8 +184,9 @@ sub equal {
 	my $self = shift;
 	my $other = shift;
 
-	# return ($self->distance($other) <= 1e-9);
-	return((abs($self->lat() - $other->lat()) <= 1e-9) && (abs(($self->long() - $other->long())) <= 1e-9));
+	# return ($self->distance($other) <= 1e-5);
+	# 1e-5 is about 1m, that's tolerant enough
+	return((abs($self->lat() - $other->lat()) <= 1e-5) && (abs(($self->long() - $other->long())) <= 1e-5));
 }
 
 =head2	not_equal
