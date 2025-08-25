@@ -68,7 +68,7 @@ sub new {
 		Carp::carp(__PACKAGE__, ': latitude not given');
 		return;
 	}
-	if(abs($params->{'lat'}) > 180) {
+	if(abs($params->{'lat'}) > 90) {
 		Carp::carp(__PACKAGE__, ': ', $params->{'lat'}, ': invalid latitude');
 		return;
 	}
@@ -335,7 +335,7 @@ sub as_uri
 {
 	my $self = shift;
 
-	return 'geo:' . $self->{'latitude'} . ',' . $self->{'longitude'};
+	return 'geo:' . $self->{'lat'} . ',' . $self->{'long'};
 }
 
 =head2	attr
