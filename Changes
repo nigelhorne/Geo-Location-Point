@@ -3,6 +3,7 @@ Revision history for Geo::Location::Point
 0.15
 	Check maximum latitude is 90, not 180
 	Use members consistently
+	Ensure tz cache is also invalidated when assigning new location
 
 0.14	Fri Jul  4 11:03:02 EDT 2025
 	Retrieve "Country" when asking for "country"
