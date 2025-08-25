@@ -6,7 +6,7 @@ use warnings;
 
 use Carp;
 use GIS::Distance;
-use Params::Get;
+use Params::Get 0.13;
 use Scalar::Util;
 
 use overload (
@@ -23,11 +23,11 @@ Geo::Location::Point - Location information
 
 =head1 VERSION
 
-Version 0.14
+Version 0.15
 
 =cut
 
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 =head1 SYNOPSIS
 
@@ -263,6 +263,7 @@ sub as_string {
 		$rc = ucfirst(lc($rc));
 	}
 
+	# TODO: make this order configurable
 	# foreach my $field('house_number', 'number', 'road', 'street', 'AccentCity', 'city', 'county', 'region', 'state_district', 'state', 'country') {
 	foreach my $field('house_number', 'number', 'road', 'street', 'city', 'county', 'region', 'state_district', 'state', 'country') {
 		if(my $value = ($self->{$field} || $self->{ucfirst($field)})) {
@@ -369,12 +370,13 @@ sub AUTOLOAD {
 	return $self->{$key} || $self->{ucfirst($key)}
 }
 
+=head1 SUPPORT
+
+This module is provided as-is without any warranty.
+
 =head1 AUTHOR
 
-Nigel Horne <njh@nigelhorne.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+Nigel Horne, C<< <njh at nigelhorne.com> >>
 
 =head1 BUGS
 
