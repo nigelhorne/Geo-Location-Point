@@ -277,8 +277,6 @@ sub as_string {
 				} else {
 					$rc .= ', ';
 				}
-			} elsif($rc) {
-				$rc .= ', ';
 			}
 			my $leave_case = 0;
 			if(my $country = $self->{'country'} // $self->{'Country'}) {
