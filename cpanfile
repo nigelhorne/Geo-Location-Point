@@ -9,6 +9,7 @@ requires 'Params::Get', '0.13';
 requires 'Scalar::Util';
 
 on 'test' => sub {
+	requires 'IPC::System::Simple';
 	requires 'Test::Carp';
 	requires 'Test::Compile';
 	requires 'Test::DescribeMe';
