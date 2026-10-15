@@ -142,7 +142,6 @@ so typos such as "citty" will not be caught.
 
 ## See Also
 
-- [Configure an Object at Runtime](https://metacpan.org/pod/Object%3A%3AConfigure)
 - [Test Dashboard](https://nigelhorne.github.io/Geo-Location-Point/coverage/)
 
 [GIS::Distance](https://metacpan.org/pod/GIS%3A%3ADistance),

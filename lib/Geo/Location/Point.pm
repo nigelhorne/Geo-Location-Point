@@ -405,8 +405,6 @@ so typos such as "citty" will not be caught.
 
 =over 4
 
-=item * L<Configure an Object at Runtime|Object::Configure>
-
 =item * L<Test Dashboard|https://nigelhorne.github.io/Geo-Location-Point/coverage/>
 
 =back
