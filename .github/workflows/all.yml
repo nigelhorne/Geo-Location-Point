@@ -20,7 +20,7 @@ jobs:
         os:
           - macos-latest
           - ubuntu-22.04
-          - ubuntu-20.04
+          - ubuntu-24.04
           # Doesn't build on the provided environments - broken C compiler
           # - windows-2022
           # - windows-2019
