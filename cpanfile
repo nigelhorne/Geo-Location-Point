@@ -3,7 +3,7 @@
 requires 'perl', '5.10.0';
 
 requires 'Carp';
-requires 'ExtUtils::MakeMaker', '6.64';
+requires 'ExtUtils::MakeMaker', '6.64';   # Minimum version for TEST_REQUIRES
 requires 'GIS::Distance';
 requires 'Params::Get', '0.13';
 requires 'Scalar::Util';
