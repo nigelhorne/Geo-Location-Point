@@ -1,6 +1,6 @@
 Revision history for Geo::Location::Point
 
-0.17
+0.17	Fri Oct 16 09:03:34 PM EDT 2026
 	Named accessors for the provenance fields - geocoder, database, confidence,
 	accuracy, country, city and state - instead of leaving them to AUTOLOAD, so
 	that pod-coverage sees them and a value the reader cannot trust is refused
