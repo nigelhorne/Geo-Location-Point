@@ -293,10 +293,10 @@ a.intra-dot:hover { color: #7700bb; }
 <div class="nav"><a href="../../../../index.html">Index</a>
 </div><div class='summary'>
 <strong>Structural Coverage (Approximate)</strong><p>
-TER1 (Statement): 86.05%<br>
-TER2 (Branch): 76.67%<br>
+TER1 (Statement): 89.53%<br>
+TER2 (Branch): 80.43%<br>
 TER3 (LCSAJ): 90.9% (10/11)<br>
-Approximate LCSAJ segments: 61<br>
+Approximate LCSAJ segments: 93<br>
 </div>
 
     <div class="legend">
@@ -364,11 +364,11 @@ Approximate LCSAJ segments: 61<br>
 </span><span class="">   23: 
 </span><span class="">   24: =head1 VERSION
 </span><span class="">   25: 
-</span><span class="">   26: Version 0.16
+</span><span class="">   26: Version 0.17
 </span><span class="">   27: 
 </span><span class="">   28: =cut
 </span><span class="">   29: 
-</span><span class="">   30: our $VERSION = &#39;0.16&#39;;
+</span><span class="">   30: our $VERSION = &#39;0.17&#39;;
 </span><span class="">   31: 
 </span><span class="">   32: =head1 SYNOPSIS
 </span><span class="">   33: 
@@ -476,7 +476,7 @@ Approximate LCSAJ segments: 61<br>
 </span><span class="">  135: sub lng {
 </span><span class="">  136: 	my $self = shift;
 </span><span class="">  137: 
-</span><span class="survived-2 tooltip" data-tooltip="Return value mutation survived. Add tests asserting exact return values. Boolean logic mutation survived. Add tests covering both true and false paths.">  138: 	return $self-&gt;{&#39;long&#39;};
+</span><span class="survived-2 tooltip" data-tooltip="Boolean logic mutation survived. Add tests covering both true and false paths. Return value mutation survived. Add tests asserting exact return values.">  138: 	return $self-&gt;{&#39;long&#39;};
 </span>
 					<details class="mutant-details">
 					<summary>Mutants (Total: 2, Killed: 0, Survived: 2)</summary>
@@ -613,7 +613,7 @@ is( func(VALUE_AT_BOUNDARY), EXPECTED, &#39;Test boundary behaviour&#39; );
 					<ul>
 				<li><b>COND_INV_218_2: Invert condition if to unless</b><br>MEDIUM: Add tests asserting both true and false outcomes
 </li></ul></details>
-<span class="survived-2 tooltip" data-tooltip="Boolean logic mutation survived. Add tests covering both true and false paths. Return value mutation survived. Add tests asserting exact return values.">  219: 		return $self-&gt;{&#39;tz&#39;} if(defined($self-&gt;{&#39;tz&#39;}));
+<span class="survived-2 tooltip" data-tooltip="Return value mutation survived. Add tests asserting exact return values. Boolean logic mutation survived. Add tests covering both true and false paths.">  219: 		return $self-&gt;{&#39;tz&#39;} if(defined($self-&gt;{&#39;tz&#39;}));
 </span>
 					<details class="mutant-details">
 					<summary>Mutants (Total: 2, Killed: 0, Survived: 2)</summary>
@@ -658,7 +658,7 @@ is( func(INPUT), EXPECTED, &#39;Verify correct return value&#39; );
 </span><span class="">  228: 		}
 </span><span class="">  229: 		$self-&gt;{&#39;tz&#39;} = $self-&gt;{&#39;timezonedb&#39;}-&gt;get_time_zone($self)-&gt;{&#39;zoneName&#39;};
 </span><span class="">  230: 
-</span><span class="survived-2 tooltip" data-tooltip="Boolean logic mutation survived. Add tests covering both true and false paths. Return value mutation survived. Add tests asserting exact return values.">  231: 		return $self-&gt;{&#39;tz&#39;};
+</span><span class="survived-2 tooltip" data-tooltip="Return value mutation survived. Add tests asserting exact return values. Boolean logic mutation survived. Add tests covering both true and false paths.">  231: 		return $self-&gt;{&#39;tz&#39;};
 </span>
 					<details class="mutant-details">
 					<summary>Mutants (Total: 2, Killed: 0, Survived: 2)</summary>
@@ -692,7 +692,7 @@ is( func(INPUT), EXPECTED, &#39;Verify correct return value&#39; );
 </span><span class="">  241: sub timezone {
 </span><span class="">  242: 	my $self = shift;
 </span><span class="">  243: 
-</span><span class="survived-2 tooltip" data-tooltip="Return value mutation survived. Add tests asserting exact return values. Boolean logic mutation survived. Add tests covering both true and false paths.">  244: 	return $self-&gt;tz();
+</span><span class="survived-2 tooltip" data-tooltip="Boolean logic mutation survived. Add tests covering both true and false paths. Return value mutation survived. Add tests asserting exact return values.">  244: 	return $self-&gt;tz();
 </span>
 					<details class="mutant-details">
 					<summary>Mutants (Total: 2, Killed: 0, Survived: 2)</summary>
@@ -866,42 +866,269 @@ is( func(INPUT), EXPECTED, &#39;Verify correct return value&#39; );
 </span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  388: 	return $self-&gt;{ucfirst($key)};
 </span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  389: }
 </span><span class="">  390: 
-</span><span class="">  391: =head1 SUPPORT
-</span><span class="">  392: 
-</span><span class="">  393: This module is provided as-is without any warranty.
-</span><span class="">  394: 
-</span><span class="">  395: =head1 AUTHOR
-</span><span class="">  396: 
-</span><span class="">  397: Nigel Horne, C&lt;&lt; &lt;njh at nigelhorne.com&gt; &gt;&gt;
-</span><span class="">  398: 
-</span><span class="">  399: =head1 BUGS
-</span><span class="">  400: 
-</span><span class="">  401: There is no validation on the attribute in the AUTOLOAD method,
-</span><span class="">  402: so typos such as &quot;citty&quot; will not be caught.
-</span><span class="">  403: 
-</span><span class="">  404: =head1 SEE ALSO
+</span><span class="">  391: # The accuracy levels a point may claim, most precise first.  This is the one
+</span><span class="">  392: # place the vocabulary is written down: Geo::Coder::Free::Provenance reads it
+</span><span class="">  393: # from here instead of keeping a copy of its own, so a level added to one of
+</span><span class="">  394: # them cannot go missing from the other.  It is defined here because
+</span><span class="">  395: # Geo::Coder::Free depends on this module, and not the other way round.
+</span><span class="">  396: use constant ACCURACY_LEVELS =&gt; [qw(address street postcode locality city region country)];
+</span><span class="">  397: 
+</span><span class="">  398: my %IS_ACCURACY_LEVEL = map { $_ =&gt; 1 } @{ACCURACY_LEVELS()};
+</span><span class="">  399: 
+</span><span class="">  400: # Read a slot the way AUTOLOAD reads it: a lower case key that was never set
+</span><span class="">  401: # falls back to its upper case spelling, so a field the caller stored under the
+</span><span class="">  402: # upper case name is still found.
+</span><span class="">  403: sub _attribute {
+</span><span class="">  404: 	my ($self, $key) = @_;
 </span><span class="">  405: 
-</span><span class="">  406: =over 4
-</span><span class="">  407: 
-</span><span class="">  408: =item * L&lt;Test Dashboard|https://nigelhorne.github.io/Geo-Location-Point/coverage/&gt;
-</span><span class="">  409: 
-</span><span class="">  410: =back
-</span><span class="">  411: 
-</span><span class="">  412: L&lt;GIS::Distance&gt;,
-</span><span class="">  413: L&lt;Geo::Point&gt;,
-</span><span class="">  414: L&lt;TimeZone::TimeZoneDB&gt;.
-</span><span class="">  415: 
-</span><span class="">  416: =head1 LICENSE AND COPYRIGHT
-</span><span class="">  417: 
-</span><span class="">  418: Copyright 2019-2026 Nigel Horne.
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  406: 	return $self-&gt;{$key} if(defined($self-&gt;{$key}));
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  407: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  408: 	return $self-&gt;{ucfirst($key)};
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  409: }
+</span><span class="">  410: 
+</span><span class="">  411: # Write a slot the way AUTOLOAD writes it, invalidating the caches derived from
+</span><span class="">  412: # the attributes: a validated accessor has to keep that promise too, or setting
+</span><span class="">  413: # a city after reading as_string() would be invisible.
+</span><span class="">  414: sub _set_attribute {
+</span><span class="">  415: 	my ($self, $key, $value) = @_;
+</span><span class="">  416: 
+</span><span class="">  417: 	delete $self-&gt;{&#39;location&#39;};
+</span><span class="">  418: 	delete $self-&gt;{&#39;tz&#39;};
 </span><span class="">  419: 
-</span><span class="">  420: Usage is subject to the GPL2 licence terms.
-</span><span class="">  421: If you use it,
-</span><span class="">  422: please let me know.
-</span><span class="">  423: 
-</span><span class="">  424: =cut
-</span><span class="">  425: 
-</span><span class="">  426: 1;
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  420: 	return $self-&gt;{$key} = $value;
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  421: }
+</span><span class="">  422: 
+</span><span class="">  423: # Passing undef clears an attribute, so every validated accessor accepts it;
+</span><span class="">  424: # anything else has to be the type the field promises.
+</span><span class="">  425: sub _check_string {
+</span><span class="">  426: 	my ($field, $value) = @_;
+</span><span class="">  427: 
+</span><span class="">  428: 	return if(!defined($value));
+</span><span class="">  429: 	Carp::croak(__PACKAGE__, &quot;: $field must be a string, not a &quot;, ref($value)) if(ref($value));
+</span><span class="">  430: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  431: 	return $value;
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  432: }
+</span><span class="">  433: 
+</span><span class="">  434: sub _check_confidence {
+</span><span class="">  435: 	my ($value) = @_;
+</span><span class="">  436: 
+</span><span class="">  437: 	return if(!defined($value));
+</span><span class="">  438: 	Carp::croak(__PACKAGE__, &#39;: confidence must be a number from 0 to 1, not &#39;,
+</span><span class="">  439: 		ref($value) ? ref($value) : $value)
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  440: 		if(ref($value) || !Scalar::Util::looks_like_number($value) || ($value &lt; 0) || ($value &gt; 1));
+</span><p> <b> Mutants (Total: 6, Killed: 6, Survived: 0)</b><p><span class="">  441: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  442: 	return $value;
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  443: }
+</span><span class="">  444: 
+</span><span class="">  445: sub _check_accuracy {
+</span><span class="">  446: 	my ($value) = @_;
+</span><span class="">  447: 
+</span><span class="">  448: 	return if(!defined($value));
+</span><span class="">  449: 	Carp::croak(__PACKAGE__, &#39;: unknown accuracy: &#39;, ref($value) ? ref($value) : $value)
+</span><span class="">  450: 		if(ref($value) || !$IS_ACCURACY_LEVEL{$value});
+</span><span class="">  451: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  452: 	return $value;
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  453: }
+</span><span class="">  454: 
+</span><span class="">  455: =head2	geocoder
+</span><span class="">  456: 
+</span><span class="">  457: The distribution that produced the point, such as C&lt;Geo::Coder::Free&gt;.
+</span><span class="">  458: 
+</span><span class="">  459:     $location-&gt;geocoder(&#39;Geo::Coder::Free&#39;);
+</span><span class="">  460: 
+</span><span class="">  461: =cut
+</span><span class="">  462: 
+</span><span class="">  463: sub geocoder {
+</span><span class="">  464: 	my $self = shift;
+</span><span class="">  465: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  466: 	return $self-&gt;_attribute(&#39;geocoder&#39;) unless(@_);
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  467: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  468: 	return $self-&gt;_set_attribute(&#39;geocoder&#39;, _check_string(&#39;geocoder&#39;, shift));
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  469: }
+</span><span class="">  470: 
+</span><span class="">  471: =head2	database
+</span><span class="">  472: 
+</span><span class="">  473: The database the distribution answered from, such as C&lt;OpenAddresses&gt;, C&lt;Local&gt;
+</span><span class="">  474: or C&lt;MaxMind&gt;.
+</span><span class="">  475: 
+</span><span class="">  476:     $location-&gt;database(&#39;OpenAddresses&#39;);
+</span><span class="">  477: 
+</span><span class="">  478: =cut
+</span><span class="">  479: 
+</span><span class="">  480: sub database {
+</span><span class="">  481: 	my $self = shift;
+</span><span class="">  482: 
+</span><span class="survived-2 tooltip" data-tooltip="Return value mutation survived. Add tests asserting exact return values. Boolean logic mutation survived. Add tests covering both true and false paths.">  483: 	return $self-&gt;_attribute(&#39;database&#39;) unless(@_);
+</span>
+					<details class="mutant-details">
+					<summary>Mutants (Total: 2, Killed: 0, Survived: 2)</summary>
+					<ul>
+				<li><b>BOOL_NEGATE_483_2: Negate boolean return expression</b><br>MEDIUM: Add tests asserting both true and false outcomes
+
+								<div class="suggested-test">
+								<div class="suggest-label">🧪 Suggested Test</div>
+								<pre># Boolean branch test suggestion
+ok( !func(INPUT), &#39;Verify boolean branch behaviour&#39; );
+</pre>
+								</div>
+							</li><li><b>RETURN_UNDEF_483_2: Replace return expression with undef</b><br>LOW: Mutation survived, but impact may be minor
+
+								<div class="suggested-test">
+								<div class="suggest-label">🧪 Suggested Test</div>
+								<pre># Return value assertion
+is( func(INPUT), EXPECTED, &#39;Verify correct return value&#39; );
+</pre>
+								</div>
+							</li></ul></details>
+<span class="">  484: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  485: 	return $self-&gt;_set_attribute(&#39;database&#39;, _check_string(&#39;database&#39;, shift));
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  486: }
+</span><span class="">  487: 
+</span><span class="">  488: =head2	confidence
+</span><span class="">  489: 
+</span><span class="">  490: How good the match is, from C&lt;0&gt; to C&lt;1&gt; inclusive, where C&lt;1&gt; is an exact
+</span><span class="">  491: match. A confidence that is not a number, or that falls outside that range, is
+</span><span class="">  492: rejected rather than stored.
+</span><span class="">  493: 
+</span><span class="">  494:     $location-&gt;confidence(0);		# Tried and rejected
+</span><span class="">  495:     $location-&gt;confidence(0.8);		# A good match
+</span><span class="">  496: 
+</span><span class="">  497: =cut
+</span><span class="">  498: 
+</span><span class="">  499: sub confidence {
+</span><span class="">  500: 	my $self = shift;
+</span><span class="">  501: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  502: 	return $self-&gt;_attribute(&#39;confidence&#39;) unless(@_);
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  503: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  504: 	return $self-&gt;_set_attribute(&#39;confidence&#39;, _check_confidence(shift));
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  505: }
+</span><span class="">  506: 
+</span><span class="">  507: =head2	ACCURACY_LEVELS
+</span><span class="">  508: 
+</span><span class="">  509: The accuracy levels a point may claim, most precise first: C&lt;address&gt; (a house
+</span><span class="">  510: number), C&lt;street&gt;, C&lt;postcode&gt;, C&lt;locality&gt;, C&lt;city&gt;, C&lt;region&gt; and
+</span><span class="">  511: C&lt;country&gt;.
+</span><span class="">  512: 
+</span><span class="">  513: This is the vocabulary, written down once here and read from here by
+</span><span class="">  514: L&lt;Geo::Coder::Free::Provenance&gt; rather than copied, so the levels a point
+</span><span class="">  515: accepts and the levels a backend reports cannot drift apart.  C&lt;accuracy()&gt;
+</span><span class="">  516: accepts these and refuses anything else.
+</span><span class="">  517: 
+</span><span class="">  518:     my $levels = Geo::Location::Point::ACCURACY_LEVELS();
+</span><span class="">  519: 
+</span><span class="">  520: =cut
+</span><span class="">  521: 
+</span><span class="">  522: =head2	accuracy
+</span><span class="">  523: 
+</span><span class="">  524: How precise the coordinates behind a match can claim to be.  The levels are
+</span><span class="">  525: those in L&lt;/ACCURACY_LEVELS&gt;; anything else is rejected, because a reader
+</span><span class="">  526: deciding what a point may claim about itself has to be able to trust the
+</span><span class="">  527: value.
+</span><span class="">  528: 
+</span><span class="">  529:     $location-&gt;accuracy(&#39;city&#39;);
+</span><span class="">  530: 
+</span><span class="">  531: =cut
+</span><span class="">  532: 
+</span><span class="">  533: sub accuracy {
+</span><span class="">  534: 	my $self = shift;
+</span><span class="">  535: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  536: 	return $self-&gt;_attribute(&#39;accuracy&#39;) unless(@_);
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  537: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  538: 	return $self-&gt;_set_attribute(&#39;accuracy&#39;, _check_accuracy(shift));
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  539: }
+</span><span class="">  540: 
+</span><span class="">  541: =head2	country
+</span><span class="">  542: 
+</span><span class="">  543: The country of the point, as the data spells it: C&lt;GB&gt;, C&lt;US&gt;, C&lt;Canada&gt;. It
+</span><span class="">  544: is stored as given rather than normalised, so it is whatever the backend
+</span><span class="">  545: matched.
+</span><span class="">  546: 
+</span><span class="">  547:     $location-&gt;country(&#39;GB&#39;);
+</span><span class="">  548: 
+</span><span class="">  549: =cut
+</span><span class="">  550: 
+</span><span class="">  551: sub country {
+</span><span class="">  552: 	my $self = shift;
+</span><span class="">  553: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  554: 	return $self-&gt;_attribute(&#39;country&#39;) unless(@_);
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  555: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  556: 	return $self-&gt;_set_attribute(&#39;country&#39;, _check_string(&#39;country&#39;, shift));
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  557: }
+</span><span class="">  558: 
+</span><span class="">  559: =head2	city
+</span><span class="">  560: 
+</span><span class="">  561: The city, town or similar locality of the point.
+</span><span class="">  562: 
+</span><span class="">  563:     $location-&gt;city(&#39;London&#39;);
+</span><span class="">  564: 
+</span><span class="">  565: =cut
+</span><span class="">  566: 
+</span><span class="">  567: sub city {
+</span><span class="">  568: 	my $self = shift;
+</span><span class="">  569: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  570: 	return $self-&gt;_attribute(&#39;city&#39;) unless(@_);
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  571: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  572: 	return $self-&gt;_set_attribute(&#39;city&#39;, _check_string(&#39;city&#39;, shift));
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  573: }
+</span><span class="">  574: 
+</span><span class="">  575: =head2	state
+</span><span class="">  576: 
+</span><span class="">  577: The state, province or region of the point.
+</span><span class="">  578: 
+</span><span class="">  579:     $location-&gt;state(&#39;KY&#39;);
+</span><span class="">  580: 
+</span><span class="">  581: =cut
+</span><span class="">  582: 
+</span><span class="">  583: sub state {
+</span><span class="">  584: 	my $self = shift;
+</span><span class="">  585: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  586: 	return $self-&gt;_attribute(&#39;state&#39;) unless(@_);
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  587: 
+</span><span class="killed tooltip" data-tooltip="Mutations here were killed. Tests are effectively covering this logic.">  588: 	return $self-&gt;_set_attribute(&#39;state&#39;, _check_string(&#39;state&#39;, shift));
+</span><p> <b> Mutants (Total: 2, Killed: 2, Survived: 0)</b><p><span class="">  589: }
+</span><span class="">  590: 
+</span><span class="">  591: =head1 SUPPORT
+</span><span class="">  592: 
+</span><span class="">  593: This module is provided as-is without any warranty.
+</span><span class="">  594: 
+</span><span class="">  595: =head1 AUTHOR
+</span><span class="">  596: 
+</span><span class="">  597: Nigel Horne, C&lt;&lt; &lt;njh at nigelhorne.com&gt; &gt;&gt;
+</span><span class="">  598: 
+</span><span class="">  599: =head1 BUGS
+</span><span class="">  600: 
+</span><span class="">  601: There is no validation on the attribute in the AUTOLOAD method,
+</span><span class="">  602: so typos such as &quot;citty&quot; will not be caught.
+</span><span class="">  603: C&lt;geocoder&gt;, C&lt;database&gt;, C&lt;confidence&gt;, C&lt;accuracy&gt;, C&lt;country&gt;, C&lt;city&gt; and
+</span><span class="">  604: C&lt;state&gt; have documented accessors of their own that do check what they are
+</span><span class="">  605: given,
+</span><span class="">  606: but they are the only attributes that do,
+</span><span class="">  607: and C&lt;new()&gt; stores whatever it is handed without checking it,
+</span><span class="">  608: so a provenance field set through the constructor can still be any value.
+</span><span class="">  609: 
+</span><span class="">  610: =head1 SEE ALSO
+</span><span class="">  611: 
+</span><span class="">  612: =over 4
+</span><span class="">  613: 
+</span><span class="">  614: =item * L&lt;Test Dashboard|https://nigelhorne.github.io/Geo-Location-Point/coverage/&gt;
+</span><span class="">  615: 
+</span><span class="">  616: =back
+</span><span class="">  617: 
+</span><span class="">  618: L&lt;GIS::Distance&gt;,
+</span><span class="">  619: L&lt;Geo::Point&gt;,
+</span><span class="">  620: L&lt;TimeZone::TimeZoneDB&gt;.
+</span><span class="">  621: 
+</span><span class="">  622: =head1 LICENSE AND COPYRIGHT
+</span><span class="">  623: 
+</span><span class="">  624: Copyright 2019-2026 Nigel Horne.
+</span><span class="">  625: 
+</span><span class="">  626: Usage is subject to the GPL2 licence terms.
+</span><span class="">  627: If you use it,
+</span><span class="">  628: please let me know.
+</span><span class="">  629: 
+</span><span class="">  630: =cut
+</span><span class="">  631: 
+</span><span class="">  632: 1;
 </span></pre>
 
 <script>
