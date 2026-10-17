@@ -20,57 +20,59 @@ https://pjcj.net
 <h1>Branch Coverage</h1>
 <table>
 <tr><td class="h" align="right">File:</td><td align="left">blib/lib/Geo/Location/Point.pm</td></tr>
-<tr><td class="h" align="right">Coverage:</td><td align="left" class="c1">80.4%</td></tr>
+<tr><td class="h" align="right">Coverage:</td><td align="left" class="c1">81.2%</td></tr>
 </table>
 <div><br/></div>
 <table>
 <tr><th>line</th><th>%</th><th colspan="2">coverage</th><th>branch</th></tr>
-<tr><td class="h"><a id="L58">58</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (not defined $class) { }</td></tr>
+<tr><td class="h"><a id="L59">59</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (not defined $class) { }</td></tr>
 <tr><td class="h"></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">elsif (&amp;Scalar::Util::blessed($class)) { }</td></tr>
-<tr><td class="h"><a id="L67">67</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless (defined $params-&gt;{&#39;lat&#39;})</td></tr>
-<tr><td class="h"><a id="L71">71</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (abs $params-&gt;{&#39;lat&#39;} &gt; 90)</td></tr>
-<tr><td class="h"><a id="L77">77</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless (defined $params-&gt;{&#39;long&#39;})</td></tr>
-<tr><td class="h"><a id="L81">81</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (abs $params-&gt;{&#39;long&#39;} &gt; 180)</td></tr>
-<tr><td class="h"><a id="L163">163</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless (defined $location)</td></tr>
-<tr><td class="h"><a id="L218">218</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">if (defined $self-&gt;{&#39;key&#39;})</td></tr>
-<tr><td class="h"><a id="L219">219</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">if defined $self-&gt;{&#39;tz&#39;}</td></tr>
-<tr><td class="h"><a id="L221">221</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">unless (defined $self-&gt;{&#39;timezonedb&#39;})</td></tr>
-<tr><td class="h"><a id="L222">222</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">unless (&quot;TimeZone::TimeZoneDB&quot;-&gt;can(&quot;get_time_zone&quot;))</td></tr>
-<tr><td class="h"><a id="L257">257</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($self-&gt;{&#39;location&#39;})</td></tr>
-<tr><td class="h"><a id="L262">262</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if ($rc)</td></tr>
-<tr><td class="h"><a id="L269">269</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (my $value = $self-&gt;{$field} || $$self{ucfirst $field})</td></tr>
-<tr><td class="h"><a id="L270">270</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($rc)</td></tr>
-<tr><td class="h"><a id="L271">271</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($field eq &#39;street&#39; or $field eq &#39;road&#39;) { }</td></tr>
-<tr><td class="h"><a id="L272">272</a></td><td class="c0">50</td><td class="c3">T</td><td class="c0">F</td><td class="s">if ($self-&gt;{&#39;number&#39;} or $self-&gt;{&#39;house_number&#39;}) { }</td></tr>
-<tr><td class="h"><a id="L282">282</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (my $country = $self-&gt;{&#39;country&#39;} // $self-&gt;{&#39;Country&#39;})</td></tr>
-<tr><td class="h"><a id="L283">283</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (uc $country eq &#39;US&#39;) { }</td></tr>
+<tr><td class="h"><a id="L68">68</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless (defined $params-&gt;{&#39;lat&#39;})</td></tr>
+<tr><td class="h"><a id="L72">72</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (abs $params-&gt;{&#39;lat&#39;} &gt; 90)</td></tr>
+<tr><td class="h"><a id="L78">78</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless (defined $params-&gt;{&#39;long&#39;})</td></tr>
+<tr><td class="h"><a id="L82">82</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (abs $params-&gt;{&#39;long&#39;} &gt; 180)</td></tr>
+<tr><td class="h"><a id="L164">164</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless (defined $location)</td></tr>
+<tr><td class="h"><a id="L219">219</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">if (defined $self-&gt;{&#39;key&#39;})</td></tr>
+<tr><td class="h"><a id="L220">220</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">if defined $self-&gt;{&#39;tz&#39;}</td></tr>
+<tr><td class="h"><a id="L222">222</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">unless (defined $self-&gt;{&#39;timezonedb&#39;})</td></tr>
+<tr><td class="h"><a id="L223">223</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">unless (&quot;TimeZone::TimeZoneDB&quot;-&gt;can(&quot;get_time_zone&quot;))</td></tr>
+<tr><td class="h"><a id="L258">258</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($self-&gt;{&#39;location&#39;})</td></tr>
+<tr><td class="h"><a id="L263">263</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if ($rc)</td></tr>
+<tr><td class="h"><a id="L270">270</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (my $value = $self-&gt;{$field} || $$self{ucfirst $field})</td></tr>
+<tr><td class="h"><a id="L271">271</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($rc)</td></tr>
+<tr><td class="h"><a id="L272">272</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($field eq &#39;street&#39; or $field eq &#39;road&#39;) { }</td></tr>
+<tr><td class="h"><a id="L273">273</a></td><td class="c0">50</td><td class="c3">T</td><td class="c0">F</td><td class="s">if ($self-&gt;{&#39;number&#39;} or $self-&gt;{&#39;house_number&#39;}) { }</td></tr>
+<tr><td class="h"><a id="L283">283</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (my $country = $self-&gt;{&#39;country&#39;} // $self-&gt;{&#39;Country&#39;})</td></tr>
+<tr><td class="h"><a id="L284">284</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (uc $country eq &#39;US&#39;) { }</td></tr>
 <tr><td class="h"></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">elsif ($country eq &#39;Canada&#39; or $country eq &#39;Australia&#39;) { }</td></tr>
 <tr><td class="h"></td><td class="c0">50</td><td class="c3">T</td><td class="c0">F</td><td class="s">elsif (uc $country eq &#39;GB&#39;) { }</td></tr>
-<tr><td class="h"><a id="L284">284</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($field eq &quot;state&quot; or $field eq &quot;region&quot; or $field eq &quot;country&quot;)</td></tr>
-<tr><td class="h"><a id="L286">286</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (lc $field eq &quot;country&quot;)</td></tr>
-<tr><td class="h"><a id="L291">291</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">if ($field eq &quot;state&quot;)</td></tr>
-<tr><td class="h"><a id="L295">295</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($field eq &quot;country&quot;)</td></tr>
-<tr><td class="h"><a id="L301">301</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($leave_case) { }</td></tr>
-<tr><td class="h"><a id="L305">305</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($field eq &#39;street&#39; || $field eq &#39;road&#39; and $rc =~ /(.+)\s([NS][ew])$/)</td></tr>
-<tr><td class="h"><a id="L371">371</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if $key eq &quot;DESTROY&quot;</td></tr>
-<tr><td class="h"><a id="L378">378</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (@_)</td></tr>
-<tr><td class="h"><a id="L386">386</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if defined $self-&gt;{$key}</td></tr>
-<tr><td class="h"><a id="L406">406</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if defined $self-&gt;{$key}</td></tr>
-<tr><td class="h"><a id="L428">428</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">unless defined $value</td></tr>
-<tr><td class="h"><a id="L429">429</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ref $value</td></tr>
-<tr><td class="h"><a id="L437">437</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless defined $value</td></tr>
-<tr><td class="h"><a id="L438">438</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">ref $value ? :</td></tr>
+<tr><td class="h"><a id="L285">285</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($field eq &quot;state&quot; or $field eq &quot;region&quot; or $field eq &quot;country&quot;)</td></tr>
+<tr><td class="h"><a id="L287">287</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (lc $field eq &quot;country&quot;)</td></tr>
+<tr><td class="h"><a id="L292">292</a></td><td class="c0">0</td><td class="c0">T</td><td class="c0">F</td><td class="s">if ($field eq &quot;state&quot;)</td></tr>
+<tr><td class="h"><a id="L296">296</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($field eq &quot;country&quot;)</td></tr>
+<tr><td class="h"><a id="L302">302</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($leave_case) { }</td></tr>
+<tr><td class="h"><a id="L306">306</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ($field eq &#39;street&#39; || $field eq &#39;road&#39; and $rc =~ /(.+)\s([NS][ew])$/)</td></tr>
+<tr><td class="h"><a id="L372">372</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if $key eq &quot;DESTROY&quot;</td></tr>
+<tr><td class="h"><a id="L379">379</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if (@_)</td></tr>
+<tr><td class="h"><a id="L387">387</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if defined $self-&gt;{$key}</td></tr>
+<tr><td class="h"><a id="L439">439</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless my $fields = $FIELDS_FOR_ACCURACY{$level}</td></tr>
+<tr><td class="h"><a id="L442">442</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if $field{$field}</td></tr>
+<tr><td class="h"><a id="L458">458</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if defined $self-&gt;{$key}</td></tr>
+<tr><td class="h"><a id="L480">480</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">unless defined $value</td></tr>
+<tr><td class="h"><a id="L481">481</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ref $value</td></tr>
+<tr><td class="h"><a id="L489">489</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless defined $value</td></tr>
+<tr><td class="h"><a id="L490">490</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">ref $value ? :</td></tr>
 <tr><td class="h"></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ref $value or not &amp;Scalar::Util::looks_like_number($value) or $value &lt; 0 or $value &gt; 1</td></tr>
-<tr><td class="h"><a id="L448">448</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless defined $value</td></tr>
-<tr><td class="h"><a id="L450">450</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">ref $value ? :</td></tr>
+<tr><td class="h"><a id="L500">500</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless defined $value</td></tr>
+<tr><td class="h"><a id="L502">502</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">ref $value ? :</td></tr>
 <tr><td class="h"></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if ref $value or not $IS_ACCURACY_LEVEL{$value}</td></tr>
-<tr><td class="h"><a id="L466">466</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
-<tr><td class="h"><a id="L483">483</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
-<tr><td class="h"><a id="L502">502</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
-<tr><td class="h"><a id="L536">536</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
+<tr><td class="h"><a id="L518">518</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
+<tr><td class="h"><a id="L535">535</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
 <tr><td class="h"><a id="L554">554</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
-<tr><td class="h"><a id="L570">570</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
-<tr><td class="h"><a id="L586">586</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
+<tr><td class="h"><a id="L617">617</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
+<tr><td class="h"><a id="L635">635</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
+<tr><td class="h"><a id="L651">651</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
+<tr><td class="h"><a id="L667">667</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">unless @_</td></tr>
 </table>
 </body>
 </html>
