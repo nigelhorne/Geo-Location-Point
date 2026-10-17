@@ -1,6 +1,6 @@
 Revision history for Geo::Location::Point
 
-0.18
+0.18	Sat Oct 17 09:03:01 AM EDT 2026
 	accuracy_for(): the rule that turns the fields a match was made on into an
 	accuracy level now lives here, beside ACCURACY_LEVELS, instead of in
 	Geo::Coder::Free::Provenance.  The levels a point accepts and the rules that
