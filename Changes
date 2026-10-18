@@ -1,6 +1,6 @@
 Revision history for Geo::Location::Point
 
-0.18	Sat Oct 17 09:03:01 AM EDT 2026
+0.19	Sat Oct 17 09:03:01 AM EDT 2026
 	accuracy_for(): the rule that turns the fields a match was made on into an
 	accuracy level now lives here, beside ACCURACY_LEVELS, instead of in
 	Geo::Coder::Free::Provenance.  The levels a point accepts and the rules that
@@ -15,6 +15,8 @@ Revision history for Geo::Location::Point
 	in Provenance: house_number/number, road/street, postcode/post_code/zip,
 	city/town/name, state/state_district/county/region and country, read
 	case-insensitively
+
+0.18    Sat Oct 17 09:03:01 AM EDT 2026
 	t/attr.t: every field set a backend can match on derives the level it should,
 	the most precise field wins whatever order the fields arrive in, the fields
 	are read case-insensitively, and every level derived is one the vocabulary

@@ -4,7 +4,7 @@ Geo::Location::Point - Location information
 
 ## Version
 
-Version 0.18
+Version 0.19
 
 ## Synopsis
 
