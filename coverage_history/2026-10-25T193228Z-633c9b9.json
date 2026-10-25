@@ -1,0 +1,406 @@
+{
+   "runs" : [
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956825.25567,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "-e",
+         "start" : 1792956819.23276,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956819.33679,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "-e",
+         "start" : 1792956819.3367,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956819.53917,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/00-load.t",
+         "start" : 1792956819.53815,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956819.8911,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/10-compile.t",
+         "start" : 1792956819.7531,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956820.1028,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/20-new.t",
+         "start" : 1792956820.09834,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956820.37969,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/30-basics.t",
+         "start" : 1792956820.35403,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956820.63039,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/as_string.t",
+         "start" : 1792956820.62684,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956820.87416,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/as_uri.t",
+         "start" : 1792956820.8731,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956821.12963,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/attr.t",
+         "start" : 1792956821.11402,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956821.38797,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/carp.t",
+         "start" : 1792956821.38614,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956821.60395,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/comment-spelling.t",
+         "start" : 1792956821.60374,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956821.79452,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/coverage.t",
+         "start" : 1792956821.79382,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956822.01828,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/distance.t",
+         "start" : 1792956821.99994,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956822.23979,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/eof.t",
+         "start" : 1792956822.23959,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956822.40965,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/eol.t",
+         "start" : 1792956822.40943,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956822.60812,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/equal.t",
+         "start" : 1792956822.60645,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956822.82479,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/links.t",
+         "start" : 1792956822.82456,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956822.99485,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/manifest.t",
+         "start" : 1792956822.99463,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956823.16779,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/modules-used.t",
+         "start" : 1792956823.16755,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956823.34493,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/no404s.t",
+         "start" : 1792956823.34469,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956823.54205,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/noopentickets.t",
+         "start" : 1792956823.54085,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956823.73933,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/pod-cm.t",
+         "start" : 1792956823.73868,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956823.91505,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/pod-snippets.t",
+         "start" : 1792956823.91484,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956824.08456,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/pod-spelling.t",
+         "start" : 1792956824.08434,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956824.25979,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/pod-synopsis.t",
+         "start" : 1792956824.25957,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956824.43231,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/pod.t",
+         "start" : 1792956824.4321,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956824.62112,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/port.t",
+         "start" : 1792956824.62044,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956824.83511,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/tz.t",
+         "start" : 1792956824.83423,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956825.05431,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/unused.t",
+         "start" : 1792956825.0541,
+         "version" : "0.19"
+      },
+      {
+         "OS" : "linux",
+         "abstract" : "Location information",
+         "dir" : "/home/runner/work/Geo-Location-Point/Geo-Location-Point",
+         "finish" : 1792956825.22661,
+         "name" : "Geo-Location-Point",
+         "perl" : "5.40.5",
+         "run" : "t/vars.t",
+         "start" : 1792956825.22641,
+         "version" : "0.19"
+      }
+   ],
+   "summary" : {
+      "Total" : {
+         "branch" : {
+            "covered" : 78,
+            "error" : 18,
+            "percentage" : 81.25,
+            "total" : 96,
+            "uncoverable" : 0
+         },
+         "condition" : {
+            "covered" : 46,
+            "error" : 11,
+            "percentage" : 80.7017543859649,
+            "total" : 57,
+            "uncoverable" : 0
+         },
+         "statement" : {
+            "covered" : 163,
+            "error" : 18,
+            "percentage" : 90.0552486187845,
+            "total" : 181
+         },
+         "subroutine" : {
+            "covered" : 36,
+            "error" : 3,
+            "percentage" : 92.3076923076923,
+            "total" : 39
+         },
+         "total" : {
+            "covered" : 323,
+            "error" : 50,
+            "percentage" : 86.5951742627346,
+            "total" : 373,
+            "uncoverable" : 0
+         }
+      },
+      "blib/lib/Geo/Location/Point.pm" : {
+         "branch" : {
+            "covered" : 78,
+            "error" : 18,
+            "percentage" : 81.25,
+            "total" : 96,
+            "uncoverable" : 0
+         },
+         "condition" : {
+            "covered" : 46,
+            "error" : 11,
+            "percentage" : 80.7017543859649,
+            "total" : 57,
+            "uncoverable" : 0
+         },
+         "statement" : {
+            "covered" : 163,
+            "error" : 18,
+            "percentage" : 90.0552486187845,
+            "total" : 181
+         },
+         "subroutine" : {
+            "covered" : 36,
+            "error" : 3,
+            "percentage" : 92.3076923076923,
+            "total" : 39
+         },
+         "total" : {
+            "covered" : 323,
+            "error" : 50,
+            "percentage" : 86.5951742627346,
+            "total" : 373,
+            "uncoverable" : 0
+         }
+      }
+   }
+}
